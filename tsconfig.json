@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+	  "alwaysStrict": true,
+	  "noImplicitAny": true,
+	  "strictNullChecks": true,
+	  "strictPropertyInitialization": true,
+	  "strictFunctionTypes": true,
+	  "noImplicitThis": true,
+	  "strictBindCallApply": true,
+	  "noPropertyAccessFromIndexSignature": true,
+	  "noUncheckedIndexedAccess": true,
+	  "noImplicitReturns": true,
+	  "noFallthroughCasesInSwitch": true,
+	  "noUnusedLocals": false,
+	  "noUnusedParameters": false,
+	  "allowUnreachableCode": false,
+	  "allowUnusedLabels": false,
+	  "noImplicitUseStrict": false,
+	  "suppressExcessPropertyErrors": false,
+	  "suppressImplicitAnyIndexErrors": false,
+	  "noStrictGenericChecks": false,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+  },
+  "include": [
+    "app/entrypoint/next-env.d.ts", "**/*.ts", "**/*.tsx", "app/entrypoint/.next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
