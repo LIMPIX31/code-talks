@@ -1,6 +1,7 @@
 {
   "name": "codetalks",
-  "workspaces": [
+	"type": "module",
+	"workspaces": [
     "app/**",
     "shared/**",
     "pages/**"

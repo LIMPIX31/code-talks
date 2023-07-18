@@ -5,7 +5,7 @@ import { useServerInsertedHTML } from 'next/navigation'
 import { CacheProvider } from '@emotion/react'
 import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
-// import theme from '/path/to/your/theme'
+import { darkSchema } from '@theme/schema'
 import { useState } from 'react'
 
 export default function ThemeRegistry(props) {
@@ -53,7 +53,7 @@ export default function ThemeRegistry(props) {
 
 	return (
 		<CacheProvider value={cache}>
-			<ThemeProvider theme={{}}>
+			<ThemeProvider theme={darkSchema}>
 				<CssBaseline />
 				{children}
 			</ThemeProvider>

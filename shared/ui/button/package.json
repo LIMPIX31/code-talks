@@ -1,0 +1,12 @@
+{
+	"name": "@ui/button",
+	"main": "src/index.tsx",
+	"devDependencies": {
+		"@mui/material": "^5.14.0"
+	},
+	"peerDependencies": {
+		"@mui/material": "5",
+		"react": "18",
+		"react-dom": "18"
+	}
+}
