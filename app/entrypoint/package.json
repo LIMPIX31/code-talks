@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "devDependencies": {
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.0",
     "@types/node": "^20.4.2",
-    "@types/react": "^18.2.15",
-    "@vanilla-extract/css": "^1.12.0",
-    "@vanilla-extract/next-plugin": "^2.1.3",
-    "@vanilla-extract/sprinkles": "^1.6.1"
+    "@types/react": "^18.2.15"
   },
   "dependencies": {
     "@page/home": "workspace:^",

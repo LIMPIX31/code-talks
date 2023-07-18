@@ -1,5 +1,6 @@
 import type { FC } from 'react'
+import { Typography } from '@mui/material'
 
 export const HomePage: FC = () => (
-	<div>Hello, world!</div>
+	<Typography>Hello, world!</Typography>
 )
