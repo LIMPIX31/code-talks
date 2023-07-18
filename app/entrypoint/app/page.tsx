@@ -1,5 +1,5 @@
-export default function Home() {
-  return (
-    <h1>Hello!</h1>
-  )
+import { HomePage } from '@page/home'
+
+export default function Page() {
+	return <HomePage/>
 }

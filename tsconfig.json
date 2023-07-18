@@ -33,11 +33,23 @@
 	  "suppressExcessPropertyErrors": false,
 	  "suppressImplicitAnyIndexErrors": false,
 	  "noStrictGenericChecks": false,
-    "plugins": [
+	  "baseUrl": "./",
+	  "plugins": [
       {
         "name": "next"
       }
     ],
+	  "paths": {
+		  "@app/entrypoint": [
+			  "app/entrypoint"
+		  ],
+		  "@style/theme": [
+			  "shared/style/theme"
+		  ],
+		  "@style/sprinkles": [
+			  "shared/style/sprinkles"
+		  ]
+	  }
   },
   "include": [
     "app/entrypoint/next-env.d.ts", "**/*.ts", "**/*.tsx", "app/entrypoint/.next/types/**/*.ts"],

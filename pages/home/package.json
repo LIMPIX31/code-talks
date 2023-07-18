@@ -1,0 +1,11 @@
+{
+	"name": "@page/home",
+	"main": "src/index.tsx",
+	"devDependencies": {
+		"@types/react": "^18.2.15"
+	},
+	"peerDependencies": {
+		"react": "18",
+		"react-dom": "18"
+	}
+}
