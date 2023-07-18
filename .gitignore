@@ -5,6 +5,7 @@
 !.yarn/sdks
 !.yarn/versions
 !.yarn/cache
+.pnp.cjs
 logs
 *.log
 npm-debug.log*
