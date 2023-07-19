@@ -1,9 +1,15 @@
-import { Plus_Jakarta_Sans } from 'next/font/google'
+import { Inter, Plus_Jakarta_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 
 export const pjs = Plus_Jakarta_Sans({
 	subsets: ['latin'],
 	variable: '--font-pjs',
+	weight: 'variable',
+})
+
+export const inter = Inter({
+	subsets: ['latin'],
+	variable: '--font-inter',
 	weight: 'variable',
 })
 

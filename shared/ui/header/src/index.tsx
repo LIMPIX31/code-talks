@@ -1,5 +1,3 @@
-'use client'
-
 import type { FC, ReactNode } from 'react'
 import { Box, Container } from '@mui/material'
 import { SquareLogo } from '@ui/brand'
@@ -22,9 +20,9 @@ export const Header: FC<HeaderProps> = ({ features }) => (
 			xs: '60px',
 		}}
 		zIndex={100}
-		sx={({ palette }) => ({
-			backdropFilter: 'blur(50px) brightness(90%)',
-		})}
+		sx={{
+			backdropFilter: 'blur(50px)',
+		}}
 	>
 		<Container maxWidth='xl' sx={{ height: '100%' }}>
 			<Box display='flex' flexDirection='row' alignItems='center' height='100%' justifyContent='space-between'>

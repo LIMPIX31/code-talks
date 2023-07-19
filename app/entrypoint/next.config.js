@@ -1,11 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	transpilePackages: [
-		"@theme/schema",
-		"@pages/home",
-		"@ui/brand",
-		"@ui/header",
-	]
+		'@theme/schema',
+		'@pages/home',
+		'@ui/brand',
+		'@ui/header',
+		'@ui/patterns',
+		'@supabase/client',
+		'@ux/parallax',
+	],
 }
 
 module.exports = nextConfig

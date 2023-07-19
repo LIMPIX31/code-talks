@@ -2,7 +2,8 @@
 	"name": "@page/home",
 	"main": "src/index.tsx",
 	"dependencies": {
-		"framer-motion": "^10.12.23"
+		"@ui/patterns": "workspace:^",
+		"@ux/parallax": "workspace:^"
 	},
 	"devDependencies": {
 		"@mui/material": "^5.14.0",

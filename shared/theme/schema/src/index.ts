@@ -1,9 +1,10 @@
 import { createTheme, ThemeOptions } from '@mui/material'
 import { mix } from 'polished'
 
-const dark = '#121212'
+const dark = '#101010'
 const light = '#f4f8ff'
-const primary = '#0c5fff'
+const primary = '#f4f8ff'
+const secondary = '#0c5fff'
 
 const base = {
 	spacing: (abs: number) => `${abs * 6}px`,
@@ -17,7 +18,7 @@ const base = {
 		fontSize: 14,
 	},
 	shape: {
-		borderRadius: 6,
+		borderRadius: 3,
 	},
 } satisfies ThemeOptions
 
@@ -29,6 +30,9 @@ export const darkPalette = {
 			'100': mix(0.1, primary, dark),
 			'600': mix(0.9, primary, light),
 			'700': mix(0.8, primary, light),
+		},
+		secondary: {
+			main: secondary,
 		},
 		error: {
 			main: '#ff0c30',
@@ -54,10 +58,14 @@ const components = {
 			styleOverrides: {
 				root: {
 					fontFamily: 'var(--font-pjs)',
-					fontWeight: '900',
-					letterSpacing: '0.07rem',
 					fontSize: '1rem',
+					textTransform: 'initial',
 					transition: `all ${base.transitions.duration.standard}ms`,
+				},
+				sizeLarge: {
+					lineHeight: '2rem',
+					paddingLeft: '32px',
+					paddingRight: '32px',
 				},
 				contained: {
 					color: darkPalette.palette.background.default,

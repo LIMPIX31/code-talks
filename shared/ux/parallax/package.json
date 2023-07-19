@@ -1,0 +1,14 @@
+{
+	"name": "@ux/parallax",
+	"main": "src/index.tsx",
+	"devDependencies": {
+		"@types/react": "^18.2.15"
+	},
+	"dependencies": {
+		"framer-motion": "^10.13.0"
+	},
+	"peerDependencies": {
+		"react": "18",
+		"react-dom": "18"
+	}
+}
