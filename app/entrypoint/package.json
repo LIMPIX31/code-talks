@@ -19,12 +19,12 @@
   },
   "dependencies": {
     "@page/home": "workspace:^",
+    "@studio-freight/react-lenis": "^0.0.23",
     "@theme/schema": "workspace:^",
     "@ui/header": "workspace:^",
     "next": "^13.4.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-locomotive-scroll": "^0.2.2",
     "typescript": "^5.1.6"
   }
 }

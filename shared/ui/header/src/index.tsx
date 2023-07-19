@@ -5,10 +5,10 @@ import { Box, Container } from '@mui/material'
 import { SquareLogo } from '@ui/brand'
 
 export interface HeaderProps {
-	feature: ReactNode[]
+	features?: ReactNode[]
 }
 
-export const Header: FC = () => (
+export const Header: FC<HeaderProps> = ({ features }) => (
 	<Box
 		position='fixed'
 		top='0'
@@ -22,24 +22,16 @@ export const Header: FC = () => (
 			xs: '60px',
 		}}
 		zIndex={100}
-		boxShadow='0 5px 20px 0px rgba(0, 0, 0, .2)'
 		sx={({ palette }) => ({
 			backdropFilter: 'blur(50px) brightness(90%)',
-			'&:after': {
-				position: 'absolute',
-				display: 'block',
-				content: '""',
-				width: '100%',
-				height: '1px',
-				left: 0,
-				bottom: 0,
-				background: `linear-gradient(90deg, transparent, ${palette.primary.main}, transparent)`,
-			},
 		})}
 	>
 		<Container maxWidth='xl' sx={{ height: '100%' }}>
-			<Box display='flex' flexDirection='row' alignItems='center' height='100%'>
+			<Box display='flex' flexDirection='row' alignItems='center' height='100%' justifyContent='space-between'>
 				<SquareLogo />
+				<Box display='flex' flexDirection='row' gap={2}>
+					{features}
+				</Box>
 			</Box>
 		</Container>
 	</Box>

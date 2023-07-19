@@ -1,13 +1,82 @@
-import type { FC } from 'react'
-import { Container, Typography } from '@mui/material'
+'use client'
 
-export const HomePage: FC = () => (
-	<Container maxWidth='xl' sx={{ isolation: 'isolate', mt: 16 }}>
-		<Typography fontSize='10rem' fontWeight={900} color='primary'>
-			CodeTalks
-		</Typography>
-		<Typography color='primary'>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias consectetur consequuntur illo ipsum iste nostrum optio placeat, qui reiciendis suscipit. Accusamus harum labore porro quo sequi. Consequuntur culpa ipsa odio optio pariatur, possimus quisquam sequi! Aliquid architecto blanditiis corporis delectus deleniti dolor dolore doloribus eum expedita, incidunt iste iusto maiores, nam nostrum perferendis provident quaerat quasi qui repudiandae sed soluta sunt totam velit! A alias beatae culpa deleniti dignissimos doloremque eos et eum eveniet exercitationem explicabo facere facilis hic illo labore laudantium maiores maxime molestias mollitia necessitatibus, non odit perferendis perspiciatis quae qui quia quibusdam quis quos rem rerum similique tenetur ut voluptate. Accusantium at consectetur debitis dignissimos dolorem doloremque enim expedita facilis iusto laboriosam laborum molestiae mollitia nisi nobis non, nostrum officiis pariatur possimus quis quod repudiandae rerum sunt tempora velit vero? Accusantium, adipisci alias aliquid at, beatae commodi cum cupiditate doloremque error esse et excepturi expedita explicabo fuga, fugit hic id ipsa iusto maiores mollitia necessitatibus nisi nobis officiis pariatur perferendis perspiciatis quae quaerat quo ratione reprehenderit sint ut veniam vero. Ab accusamus animi asperiores assumenda autem ducimus eaque eligendi eos eum, eveniet id inventore mollitia nihil porro, quos, reprehenderit ut voluptatem? A accusantium alias, architecto asperiores aspernatur aut autem beatae commodi delectus doloremque eligendi error eveniet ex exercitationem fugiat fugit id impedit ipsam iste, itaque minus nam pariatur perspiciatis praesentium quaerat quam quas qui reiciendis rem reprehenderit rerum, sapiente similique sint tempore temporibus veniam veritatis! Assumenda beatae blanditiis excepturi rem sunt temporibus vitae! Adipisci architecto culpa est explicabo facilis harum iure magnam, nulla numquam, porro rem saepe veniam. Alias aliquam aliquid atque deserunt dignissimos dolor eveniet facilis fugiat in incidunt ipsam iste laborum laudantium magnam molestias nam, necessitatibus officia omnis quaerat quidem quisquam reiciendis rem repellendus rerum sed similique, temporibus tenetur velit veniam vitae. Enim, fugiat harum in necessitatibus obcaecati repudiandae velit! Aspernatur assumenda aut eius laborum minus non provident, repellendus. Ad adipisci assumenda blanditiis cum doloremque dolores ea earum est ex, harum necessitatibus nemo nihil quasi quos repellat repellendus reprehenderit sed sequi similique voluptatibus. Ad, aspernatur autem blanditiis commodi consequatur cum cupiditate delectus distinctio dolore dolorem doloremque ea eius, eum ex expedita laboriosam maxime nesciunt nihil nisi nostrum officia pariatur possimus quaerat quos repellendus rerum sapiente temporibus vel veritatis voluptas! Aspernatur fugiat labore nulla reprehenderit sapiente tempore. Aliquid aspernatur beatae commodi culpa cum cumque delectus deleniti distinctio dolores, dolorum facilis id illum inventore itaque laborum magni minus modi mollitia neque nesciunt nisi odio optio placeat porro provident quae quam, qui quis quisquam quod rem reprehenderit sapiente sequi sunt suscipit velit, vitae! Accusamus aspernatur cumque deleniti dolores fuga fugit magnam necessitatibus placeat ratione rem! Doloremque enim libero numquam rem similique ullam, voluptatem. Consequatur error illo ipsam nihil obcaecati officia placeat quasi rem sit voluptatem. A amet asperiores aspernatur assumenda, beatae consectetur error eveniet excepturi fugit hic in libero minus molestias optio perspiciatis quasi quibusdam, quis reprehenderit rerum vel vero voluptatem voluptatibus! Accusamus adipisci commodi consequatur ducimus earum error modi necessitatibus provident qui saepe! Animi aspernatur labore nulla officiis tenetur. Amet deleniti dolorum eum illo inventore itaque sint. Commodi consequuntur cumque deserunt laboriosam maiores mollitia nemo possimus, quidem quisquam ut vitae voluptatibus. Accusamus alias aliquam dolor eaque earum error ex explicabo fugit incidunt inventore ipsum itaque maxime minima nemo, neque officia officiis placeat possimus rerum sapiente tenetur voluptas voluptate. Animi consequuntur cupiditate dignissimos distinctio dolores ducimus enim error eum exercitationem expedita explicabo facilis fugit harum, illo illum itaque labore maxime nesciunt odio placeat possimus quaerat sequi sint tenetur ut. At beatae, corporis culpa cumque excepturi explicabo, laboriosam molestiae molestias quibusdam rem repellendus, vitae. Facilis quia vitae voluptatem. Aliquid animi aspernatur aut autem cumque, dolore doloremque ducimus eius enim et fugit harum in iure iusto nisi nobis nostrum optio pariatur porro possimus quas reprehenderit repudiandae soluta, tenetur voluptas. Architecto beatae dolorem eius, enim ex, facilis ipsum laborum molestias mollitia non saepe ut. Adipisci architecto cumque dolorum nihil ut. Ab accusamus aut, consectetur delectus dignissimos dolor dolorem eius esse itaque laudantium nobis omnis quasi qui sequi sint vel velit. Alias autem debitis dignissimos eos excepturi incidunt iusto neque nihil repudiandae, velit. Accusamus, aliquid aut consectetur consequuntur dignissimos dolore esse explicabo facere minima nisi non nulla officia perferendis placeat praesentium quae, recusandae repellat saepe sed vitae. Impedit, sed velit? Aliquam aliquid asperiores consequatur eligendi harum laboriosam nihil obcaecati quae quibusdam quidem, quod tempore vitae? Ab aliquid, delectus dolore dolorum eius exercitationem ipsum laudantium nemo nisi qui quis tempora totam voluptate? Accusantium aliquam aperiam aspernatur consequatur cumque ea excepturi, facere harum in, maiores minus nemo nobis officia qui repudiandae tempora tempore veniam veritatis voluptate voluptates. Asperiores at beatae blanditiis cumque ex, facere fugiat impedit itaque magnam nam omnis quo sint veniam? Accusamus ad commodi culpa dolor doloremque esse excepturi exercitationem ipsum laborum natus non nostrum, obcaecati officiis optio quaerat quo, saepe sit unde veritatis voluptate? A adipisci animi assumenda corporis cumque delectus deserunt dicta dolore ducimus eius eos esse eum ex fugiat in incidunt laboriosam necessitatibus nemo nobis odio pariatur perferendis, perspiciatis possimus quidem ratione, repellat reprehenderit repudiandae similique sint soluta suscipit, tempora tempore totam vel velit veritatis voluptatibus! Dolorem dolores et iste laboriosam perspiciatis! Assumenda cum dolores, eum ex excepturi magnam ratione similique tenetur. A cupiditate harum, hic qui similique temporibus totam voluptate! Consectetur deleniti, eius est harum hic quos tempora. Consequatur delectus deserunt dolorum eveniet facilis incidunt nihil nisi numquam omnis optio, perferendis porro quo reiciendis sapiente sint sit sunt tempora unde velit veritatis. Atque consequatur distinctio doloremque eligendi molestiae, nisi quis similique totam? At atque consequatur deleniti dolor dolore dolores doloribus earum enim est ipsum, libero magnam minus quas, quod repellat rerum tenetur voluptatum? Accusantium exercitationem hic omnis placeat quae quidem suscipit, totam. Dignissimos iusto molestias omnis quam quisquam tempora vero. Aliquam commodi enim maxime quos voluptate? Autem cumque ex magnam maxime officiis praesentium rerum saepe ut velit? Fuga soluta, velit! Eius fugit harum laboriosam mollitia nihil, quidem quos. Asperiores aut beatae earum eius ipsa itaque nesciunt nihil, nostrum obcaecati optio quam, qui sit totam voluptas voluptatibus. Enim, quas.
-		</Typography>
-	</Container>
-)
+import type { FC } from 'react'
+import { Box, Container, Typography } from '@mui/material'
+import { motion, useScroll, useTransform } from 'framer-motion'
+
+export const HomePage: FC = () => {
+	const { scrollYProgress } = useScroll()
+
+	const y = useTransform(scrollYProgress, [0, 1], [0, 200])
+
+	return (
+		<Container
+			maxWidth='xl'
+			sx={{
+				isolation: 'isolate',
+				display: 'flex',
+				flexDirection: 'column',
+				alignItems: {
+					xs: 'center',
+					md: 'left',
+				},
+			}}
+		>
+			<Box position='relative' minHeight='100vh' sx={{ pt: 16 }}>
+				<Box
+					position='fixed'
+					height='100vh'
+					width='100%'
+					top='0'
+					left='0'
+					sx={{
+						background: `linear-gradient(-90deg, #ffffff05 1px, transparent 1px),
+					linear-gradient(#ffffff05 1px, transparent 1px),
+					linear-gradient(-90deg, rgba(0, 0, 0, .04) 1px, transparent 1px),
+					linear-gradient(rgba(0,0,0,.04) 1px, transparent 1px),
+					linear-gradient(transparent 3px, transparent 3px, transparent 78px, transparent 78px),
+					linear-gradient(-90deg, #ffffff08 1px, transparent 1px),
+					linear-gradient(-90deg, transparent 3px, transparent 3px, transparent 78px, transparent 78px),
+					linear-gradient(#ffffff08 1px, transparent 1px),
+					transparent`,
+						backgroundSize: `
+					32px 32px,
+					32px 32px,
+					320px 320px,
+					320px 320px,
+					320px 320px,
+					320px 320px,
+					320px 320px,
+					320px 320px`,
+					}}
+				/>
+				<Typography fontSize='10vw' fontWeight={900} color='text' position='relative'>
+					CodeTalks _
+				</Typography>
+				<Typography
+					component={motion.div}
+					color='background.default'
+					fontSize='2vw'
+					fontWeight={900}
+					fontFamily='var(--font-pjs)'
+					width='30vw'
+					position='relative'
+					zIndex='1'
+					sx={{ backgroundColor: 'text.primary', px: 6, py: 1, rotate: '-10deg' }}
+					style={{ y }}
+				>
+					Mind powered
+					<Box
+						position='absolute'
+						height='100%'
+						width='100%'
+						top='2'
+						left='2'
+						sx={{ backgroundColor: 'primary.main' }}
+					/>
+				</Typography>
+			</Box>
+			<Box position='relative' minHeight='100vh' />
+		</Container>
+	)
+}
