@@ -15,24 +15,26 @@ export const HomePage: FC = () => (
 		}}
 	>
 		<Box position='relative' minHeight='100vh' sx={{ pt: 64 }}>
-			<Box position='absolute' bottom='10vw' left='0' display='flex' flexDirection='row'>
-				<Typography fontSize='12vw' lineHeight='12vw'>
+			<Box position='absolute' top='50%' left='0' display='flex' flexDirection='row' sx={{ translate: '0 -50%' }}>
+				<Typography fontSize='10vmax' lineHeight='12vmax' whiteSpace='nowrap'>
 					<Box
 						component={makeVerticalParallax({ x: [0, -500], y: [0, -400], rotate: [0, -20] })}
 						sx={{
-							fontSize: '3vw',
+							fontSize: '3vmax',
 							position: 'absolute',
-							right: '25vw',
-							top: '20vw',
+							right: '25vmax',
+							top: '20vmax',
 							backgroundColor: 'primary.main',
 							color: 'background.default',
 							padding: '0 40px',
-							lineHeight: '8vw',
+							lineHeight: '8vmax',
 							fontWeight: 900,
 							fontFamily: 'var(--font-pjs)',
 							rotate: '-23deg',
 							mixBlendMode: 'difference',
 							zIndex: 10,
+							width: '40vmax',
+							textAlign: 'center',
 						}}
 					>
 						Mind powered people
@@ -44,13 +46,13 @@ export const HomePage: FC = () => (
 						To talk
 					</Box>
 				</Typography>
-				<Box component={makeVerticalParallax({ y: [0, 100], x: [0, 50] })} position='relative'>
+				<Box component={makeVerticalParallax({ y: [0, 100], x: [0, 50] })} position='relative' flexShrink='0'>
 					<Box
 						position='absolute'
 						left='10%'
 						top='50%'
-						width='40vw'
-						height='20vw'
+						width='40vmax'
+						height='20vmax'
 						sx={{
 							backgroundColor: 'secondary.main',
 							translate: '-50% -50%',
@@ -58,7 +60,7 @@ export const HomePage: FC = () => (
 							opacity: 0.2,
 						}}
 					/>
-					<svg width='30vw' height='30vw' version='1.1' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
+					<svg width='30vmax' height='30vmax' version='1.1' viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'>
 						<g transform='translate(-552 -1128)'>
 							<g transform='matrix(1.18 0 0 1.18 -139 -255)'>
 								<g transform='matrix(2.11 0 0 2.11 554 1130)' fill='#0c5fff'>
