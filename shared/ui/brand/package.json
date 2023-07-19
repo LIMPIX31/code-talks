@@ -1,0 +1,15 @@
+{
+	"name": "@ui/brand",
+	"main": "src/index.tsx",
+	"devDependencies": {
+		"@mui/material": "^5.14.0",
+		"@types/react": "^18.2.15",
+		"next": "^13.4.10"
+	},
+	"peerDependencies": {
+		"@mui/material": "5",
+		"next": "13",
+		"react": "18",
+		"react-dom": "18"
+	}
+}

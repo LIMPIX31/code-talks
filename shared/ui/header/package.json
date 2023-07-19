@@ -1,8 +1,12 @@
 {
-	"name": "@ui/button",
+	"name": "@ui/header",
 	"main": "src/index.tsx",
+	"dependencies": {
+		"@ui/brand": "workspace:^"
+	},
 	"devDependencies": {
-		"@mui/material": "^5.14.0"
+		"@mui/material": "^5.14.0",
+		"@types/react": "^18.2.15"
 	},
 	"peerDependencies": {
 		"@mui/material": "5",

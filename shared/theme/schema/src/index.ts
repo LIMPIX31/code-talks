@@ -1,11 +1,17 @@
 import { createTheme } from '@mui/material'
+import { mix } from 'polished'
+
+const dark = '#09001f'
+const light = '#f4f8ff'
+const primary = '#0c5fff'
 
 export const darkSchema = createTheme({
 	components: {},
 	palette: {
 		mode: 'dark',
 		primary: {
-			main: '#0c5fff',
+			main: primary,
+			'100': mix(0.1, primary, dark),
 		},
 		error: {
 			main: '#ff0c30',
@@ -17,10 +23,10 @@ export const darkSchema = createTheme({
 			main: '#8aff0c',
 		},
 		background: {
-			default: '#09001f',
+			default: dark,
 		},
 		text: {
-			primary: '#f4f8ff',
+			primary: light,
 		},
 	},
 	spacing: (abs: number) => `${abs * 6}px`,

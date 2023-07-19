@@ -24,9 +24,12 @@ __metadata:
     "@theme/schema": "workspace:^"
     "@types/node": "npm:^20.4.2"
     "@types/react": "npm:^18.2.15"
+    "@ui/header": "workspace:^"
     next: "npm:^13.4.10"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
+    react-locomotive-scroll: "npm:^0.2.2"
+    tslib: "npm:^2.6.0"
     typescript: "npm:^5.1.6"
   languageName: unknown
   linkType: soft
@@ -74,7 +77,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.5, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
   version: 7.22.6
   resolution: "@babel/runtime@npm:7.22.6"
   dependencies:
@@ -614,6 +617,7 @@ __metadata:
   resolution: "@theme/schema@workspace:shared/theme/schema"
   dependencies:
     "@mui/material": "npm:^5.14.0"
+    polished: "npm:^4.2.2"
   peerDependencies:
     "@mui/material": 5
     react: 18
@@ -820,11 +824,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ui/button@workspace:shared/ui/button":
+"@ui/brand@workspace:^, @ui/brand@workspace:shared/ui/brand":
   version: 0.0.0-use.local
-  resolution: "@ui/button@workspace:shared/ui/button"
+  resolution: "@ui/brand@workspace:shared/ui/brand"
   dependencies:
     "@mui/material": "npm:^5.14.0"
+    "@types/react": "npm:^18.2.15"
+    next: "npm:^13.4.10"
+  peerDependencies:
+    "@mui/material": 5
+    next: 13
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@ui/header@workspace:^, @ui/header@workspace:shared/ui/header":
+  version: 0.0.0-use.local
+  resolution: "@ui/header@workspace:shared/ui/header"
+  dependencies:
+    "@mui/material": "npm:^5.14.0"
+    "@types/react": "npm:^18.2.15"
+    "@ui/brand": "workspace:^"
   peerDependencies:
     "@mui/material": 5
     react: 18
@@ -2676,6 +2697,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"polished@npm:^4.2.2":
+  version: 4.2.2
+  resolution: "polished@npm:4.2.2"
+  dependencies:
+    "@babel/runtime": "npm:^7.17.8"
+  checksum: 1d054d1fea18ac7d921ca91504ffcf1ef0f505eda6acbfec6e205a98ebfea80b658664995deb35907dabc5f75f287dc2894812503a8aed28285bb91f25cf7400
+  languageName: node
+  linkType: hard
+
 "postcss@npm:8.4.14":
   version: 8.4.14
   resolution: "postcss@npm:8.4.14"
@@ -2772,6 +2802,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-locomotive-scroll@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "react-locomotive-scroll@npm:0.2.2"
+  dependencies:
+    use-debounce: "npm:6.0.1"
+    use-resize-observer: "npm:6.1.0"
+  peerDependencies:
+    locomotive-scroll: ^4.1.4
+    react: ^18.0.2
+  checksum: 7d64daec794fa028e421dafc41308969a00c1bd0789852384c9047f61be41747ea4f450af4ecd0be6782500cf7fd866747a68f86165b4e4eeb772c3e6d786f50
+  languageName: node
+  linkType: hard
+
 "react-transition-group@npm:^4.4.5":
   version: 4.4.5
   resolution: "react-transition-group@npm:4.4.5"
@@ -2811,6 +2854,13 @@ __metadata:
     define-properties: "npm:^1.2.0"
     functions-have-names: "npm:^1.2.3"
   checksum: 312b7966c5cd2e6837da4073e0e6450191e3c6e8f07276cbed35e170ea5606f91487b435eb3290593f8aed39b1191c44f5340e6e5392650feaf2b34a98378464
+  languageName: node
+  linkType: hard
+
+"resize-observer-polyfill@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "resize-observer-polyfill@npm:1.5.1"
+  checksum: 5e882475067f0b97dc07e0f37c3e335ac5bc3520d463f777cec7e894bb273eddbfecb857ae668e6fb6881fd6f6bb7148246967172139302da50fa12ea3a15d95
   languageName: node
   linkType: hard
 
@@ -3169,7 +3219,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^2.4.0":
+"tslib@npm:^2.4.0, tslib@npm:^2.6.0":
   version: 2.6.0
   resolution: "tslib@npm:2.6.0"
   checksum: 8d18020a8b9e70ecc529a744c883c095f177805efdbc9786bd50bd82a46c17547923133c5444fbcaf1f7f1c44e0e29c89f73ecf6d8fd1039668024a073a81dc6
@@ -3288,6 +3338,27 @@ __metadata:
   dependencies:
     punycode: "npm:^2.1.0"
   checksum: 4ef57b45aa820d7ac6496e9208559986c665e49447cb072744c13b66925a362d96dd5a46c4530a6b8e203e5db5fe849369444440cb22ecfc26c679359e5dfa3c
+  languageName: node
+  linkType: hard
+
+"use-debounce@npm:6.0.1":
+  version: 6.0.1
+  resolution: "use-debounce@npm:6.0.1"
+  peerDependencies:
+    react: ">=16.8.0"
+  checksum: 7134215ba88a7a0ce2453cf1e5e0fca5fd868d188353a3950dd6de37f0df40825b6693c1e8bc6694f61a3bc6b9c289c1d5b182ac0b0d2991c31931ae6fb4ec32
+  languageName: node
+  linkType: hard
+
+"use-resize-observer@npm:6.1.0":
+  version: 6.1.0
+  resolution: "use-resize-observer@npm:6.1.0"
+  dependencies:
+    resize-observer-polyfill: "npm:^1.5.1"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 2ad33426ddcdaa06e2162cf585a44ef9b65a0319ca63f8d10b69b829a6bb7cfec2fb0922274f56ff4731e0e6b6123f4db5151f639f48b044f4dd522a2848a14d
   languageName: node
   linkType: hard
 

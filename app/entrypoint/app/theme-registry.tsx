@@ -7,6 +7,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { darkSchema } from '@theme/schema'
 import { useState } from 'react'
+import { GlobalStyles } from '@mui/material'
 
 export default function ThemeRegistry(props) {
 	const { options, children } = props
@@ -55,6 +56,14 @@ export default function ThemeRegistry(props) {
 		<CacheProvider value={cache}>
 			<ThemeProvider theme={darkSchema}>
 				<CssBaseline />
+				<GlobalStyles
+					styles={({ palette }) => ({
+						'*::selection': {
+							color: palette.background.default,
+							background: palette.primary.main,
+						},
+					})}
+				/>
 				{children}
 			</ThemeProvider>
 		</CacheProvider>
