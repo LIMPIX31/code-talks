@@ -1,0 +1,8 @@
+{
+	"name": "@supabase/client",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@supabase/supabase-js": "^2.26.0",
+		"@types/node": "^20.4.2"
+	}
+}
