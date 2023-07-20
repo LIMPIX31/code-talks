@@ -7,7 +7,7 @@ import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
 import { darkSchema } from '@theme/schema'
 import { useState } from 'react'
-import { GlobalStyles } from '@mui/material'
+import GlobalStyles from '@mui/material/GlobalStyles'
 
 export default function ThemeRegistry(props) {
 	const { options, children } = props

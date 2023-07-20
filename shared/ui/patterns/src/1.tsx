@@ -1,5 +1,5 @@
 import type { ComponentProps, FC } from 'react'
-import { useTheme } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 export const Pattern1: FC<ComponentProps<'svg'>> = (props) => {
 	const { palette } = useTheme()

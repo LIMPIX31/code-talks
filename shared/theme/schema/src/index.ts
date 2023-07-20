@@ -1,4 +1,4 @@
-import { createTheme, ThemeOptions } from '@mui/material'
+import { createTheme, type ThemeOptions } from '@mui/material/styles'
 import { mix } from 'polished'
 
 const dark = '#101010'

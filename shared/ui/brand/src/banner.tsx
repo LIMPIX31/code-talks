@@ -1,7 +1,7 @@
 'use client'
 
 import { ComponentProps, FC } from 'react'
-import { useTheme } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 export const CodetalksBanner: FC<ComponentProps<'svg'>> = (props) => {
 	const { palette } = useTheme()

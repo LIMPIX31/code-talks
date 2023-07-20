@@ -1,6 +1,6 @@
 'use client'
 
-import { styled } from '@mui/material'
+import { styled } from '@mui/material/styles'
 import logo from './assets/square-logo.png'
 import Image from 'next/image'
 import type { FC } from 'react'
