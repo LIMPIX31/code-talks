@@ -21,6 +21,7 @@ export const FooterFragment: FC = () => (
 		flexDirection='column'
 		alignItems='center'
 		justifyContent='center'
+		overflow='hidden'
 	>
 		<Box width='45vmax' position='relative' left='-2vmax' component={makeScrolly({ x: { out: [-500, 0] } })}>
 			<CodetalksBanner />
@@ -34,6 +35,7 @@ export const FooterFragment: FC = () => (
 					backgroundColor: 'secondary.main',
 					filter: 'blur(300px)',
 					opacity: 0.5,
+					borderRadius: '20%',
 				}}
 			/>
 		</Box>
