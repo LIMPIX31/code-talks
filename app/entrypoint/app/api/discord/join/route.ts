@@ -1,14 +1,14 @@
 import type { NextRequest } from 'next/server'
 import { NextResponse } from 'next/server'
 
-export default async function POST(req: NextRequest) {
+export async function POST(req: NextRequest) {
 	const { token, user } = await req.json()
 
 	if (!token || !user) {
 		return new Response(null, { status: 401 })
 	}
 
-	const { status } = await fetch(`https://discord.com/api/v10/guilds/${process.env.GUILD_ID}/members/${USER}`, {
+	const { status } = await fetch(`https://discord.com/api/v10/guilds/${process.env.GUILD_ID}/members/${user}`, {
 		method: 'PUT',
 		body: JSON.stringify({
 			access_token: token,
