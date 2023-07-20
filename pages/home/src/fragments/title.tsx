@@ -3,11 +3,14 @@
 import { FC } from 'react'
 import Box from '@mui/material/Box'
 import Typography from '@mui/material/Typography'
-import { makeVerticalParallax } from '@ux/parallax'
+import { scrolly } from '@ux/parallax'
 import Container from '@mui/material/Container'
+
+const makeScrolly = (d: Parameters<typeof scrolly>[0]) => scrolly(d, { bindTo: 'title' })
 
 export const TitleFragment: FC = () => (
 	<Container
+		data-parallax-id='title'
 		maxWidth='xl'
 		sx={{
 			position: 'relative',
@@ -20,7 +23,7 @@ export const TitleFragment: FC = () => (
 			<Box position='absolute' top='50%' left='0' display='flex' flexDirection='row' sx={{ translate: '0 -50%' }}>
 				<Typography fontSize='10vmax' lineHeight='12vmax' whiteSpace='nowrap' component='div'>
 					<Box
-						component={makeVerticalParallax(0, {
+						component={makeScrolly({
 							x: { out: [0, -500] },
 							y: { out: [0, -400] },
 							rotate: { out: [0, -20] },
@@ -45,22 +48,18 @@ export const TitleFragment: FC = () => (
 					>
 						I don&apos;t know what to write
 					</Box>
-					<Box fontSize='inherit' lineHeight='inherit' component={makeVerticalParallax(0, { y: { out: [0, -200] } })}>
+					<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: { out: [0, -200] } })}>
 						To code
 					</Box>
 					<Box
 						fontSize='inherit'
 						lineHeight='inherit'
-						component={makeVerticalParallax(0, { y: { out: [0, -100] }, x: { out: [0, -500] } })}
+						component={makeScrolly({ y: { out: [0, -100] }, x: { out: [0, -500] } })}
 					>
 						To talk
 					</Box>
 				</Typography>
-				<Box
-					component={makeVerticalParallax(0, { y: { out: [0, 100] }, x: { out: [0, 50] } })}
-					position='relative'
-					flexShrink='0'
-				>
+				<Box component={makeScrolly({ y: { out: [0, 100] }, x: { out: [0, 50] } })} position='relative' flexShrink='0'>
 					<Box
 						position='absolute'
 						left='10%'

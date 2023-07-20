@@ -3,11 +3,14 @@
 import { FC } from 'react'
 import Box from '@mui/material/Box'
 import { CodetalksBanner } from '@ui/brand'
-import { makeVerticalParallax } from '@ux/parallax'
+import { scrolly } from '@ux/parallax'
 import Typography from '@mui/material/Typography'
+
+const makeScrolly = (d: Parameters<typeof scrolly>[0]) => scrolly(d, { bindTo: 'footer', offset: ['self', 'self'] })
 
 export const FooterFragment: FC = () => (
 	<Box
+		data-parallax-id='footer'
 		position='relative'
 		minHeight='100vh'
 		sx={{ pt: 14, gap: 10, backgroundColor: 'secondary.100' }}
@@ -23,7 +26,7 @@ export const FooterFragment: FC = () => (
 			width='45vmax'
 			position='relative'
 			left='-2vmax'
-			component={makeVerticalParallax(0, { x: { out: [-500, 0] } })}
+			component={makeScrolly({ x: { out: [-500, 0] } })}
 		>
 			<CodetalksBanner />
 			<Box
@@ -43,7 +46,7 @@ export const FooterFragment: FC = () => (
 			position='relative'
 			width='39vmax'
 			height='4vmax'
-			component={makeVerticalParallax(0, { y: { out: [-200, 0] }, x: { out: [500, 0] } })}
+			component={makeScrolly({ y: { out: [-200, 0] }, x: { out: [500, 0] } })}
 			sx={{
 				backgroundColor: 'secondary.main',
 				rotate: '5deg',
