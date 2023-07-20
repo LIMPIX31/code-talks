@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentProps, FC, useMemo } from 'react'
+import { ComponentProps, FC, RefObject, useMemo } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
 
 export interface ScrollyProps<C extends keyof typeof motion> {
@@ -9,12 +9,13 @@ export interface ScrollyProps<C extends keyof typeof motion> {
 		component?: C
 		bindTo?: string | 'root'
 		offset?: [number | 'self', number | 'self'] | number
+		relativeTo?: RefObject<HTMLElement>
 	}
 }
 
 const Scrolly = <C extends keyof typeof motion>({
 	distance,
-	options: { component, bindTo, offset = [0, 0] },
+	options: { component, bindTo, offset = [0, 0], relativeTo },
 	...props
 }: ComponentProps<C> & ScrollyProps<C>) => {
 	const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1
@@ -32,20 +33,25 @@ const Scrolly = <C extends keyof typeof motion>({
 			return [0, viewportHeight]
 		}
 
-		const { top, bottom } = anchor.getBoundingClientRect()
+		const { top: topV, bottom: bottomV, height } = anchor.getBoundingClientRect()
+
+		const relative = relativeTo?.current?.scrollTop ?? window.scrollY
+
+		const top = topV + relative
+		const bottom = bottomV + relative
 
 		let [offsetX, offsetY] = typeof offset === 'number' ? [offset, offset] : offset
 
 		if (offsetX === 'self') {
-			offsetX = -top
+			offsetX = -height
 		}
 
 		if (offsetY === 'self') {
-			offsetY = -top
+			offsetY = -height
 		}
 
 		return [top + offsetX, bottom + offsetY]
-	}, [bindTo, offset, viewportHeight])
+	}, [bindTo, offset, relativeTo, viewportHeight])
 
 	const deltas = Object.entries(distance).reduce<any>((a, [key, { in: iin, out }]) => {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
@@ -65,6 +71,7 @@ export const scrolly =
 			component?: C
 			bindTo?: string | 'root'
 			offset?: [number | 'self', number | 'self'] | number
+			relativeTo?: RefObject<HTMLElement>
 		},
 	): FC<ComponentProps<C>> =>
 	(props) => <Scrolly distance={distance} options={options} {...props} />
