@@ -100,7 +100,7 @@ export const TitleFragment: FC = () => (
 							opacity: 0.2,
 						}}
 					/>
-					<Box position='relative' left='5vmax'>
+					<Box position='relative' left={['-10vmax', '5vmax']}>
 						<D3Logo />
 					</Box>
 				</Box>

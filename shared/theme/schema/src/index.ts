@@ -12,9 +12,21 @@ declare module '@mui/material' {
 		magenta: PaletteColorOptions
 		pink: PaletteColorOptions
 	}
+
+	interface BreakpointOverrides {
+		sm: false
+	}
 }
 
 const base = {
+	breakpoints: {
+		values: {
+			xs: 0,
+			md: 900,
+			lg: 1200,
+			xl: 1536,
+		},
+	},
 	spacing: (abs: number) => `${abs * 6}px`,
 	transitions: {
 		duration: {
