@@ -28,11 +28,13 @@ export const darkPalette = {
 		primary: {
 			main: primary,
 			'100': mix(0.1, primary, dark),
+			'200': mix(0.2, primary, dark),
 			'600': mix(0.9, primary, light),
 			'700': mix(0.8, primary, light),
 		},
 		secondary: {
 			main: secondary,
+			'100': mix(0.1, secondary, dark),
 		},
 		error: {
 			main: '#ff0c30',

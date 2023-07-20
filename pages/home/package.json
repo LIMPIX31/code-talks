@@ -2,7 +2,7 @@
 	"name": "@page/home",
 	"main": "src/index.tsx",
 	"dependencies": {
-		"@ui/patterns": "workspace:^",
+		"@ui/brand": "workspace:^",
 		"@ux/parallax": "workspace:^"
 	},
 	"devDependencies": {

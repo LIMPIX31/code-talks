@@ -61,4 +61,4 @@ dist
 .tern-port
 .vscode-test
 .idea
-.local.env
+.env.local

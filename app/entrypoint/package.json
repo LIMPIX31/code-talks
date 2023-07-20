@@ -21,6 +21,7 @@
   "dependencies": {
     "@page/home": "workspace:^",
     "@studio-freight/react-lenis": "^0.0.23",
+    "@supabase/client": "workspace:^",
     "@theme/schema": "workspace:^",
     "@ui/header": "workspace:^",
     "next": "^13.4.10",
