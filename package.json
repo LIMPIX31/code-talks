@@ -6,9 +6,13 @@
     "shared/**",
     "pages/**"
   ],
+  "scripts": {
+    "typecheck": "tsc",
+    "lint": "eslint **/*.{ts,tsx}"
+  },
   "packageManager": "yarn@4.0.0-rc.48",
   "devDependencies": {
-    "@lmpx-config/eslint": "0.0.8",
+    "@lmpx-config/eslint": "0.0.9",
     "@types/node": "^20.4.2",
     "eslint": "^8.45.0",
     "next": "^13.4.10",

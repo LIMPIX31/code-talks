@@ -8,13 +8,13 @@ export async function POST(req: NextRequest) {
 		return new Response(null, { status: 401 })
 	}
 
-	const { status } = await fetch(`https://discord.com/api/v10/guilds/${process.env.GUILD_ID}/members/${user}`, {
+	const { status } = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/members/${user}`, {
 		method: 'PUT',
 		body: JSON.stringify({
 			access_token: token,
 		}),
 		headers: {
-			Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}`,
+			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 		},
 	})
 

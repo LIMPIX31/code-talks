@@ -9,7 +9,7 @@ import { darkSchema } from '@theme/schema'
 import { useState } from 'react'
 import GlobalStyles from '@mui/material/GlobalStyles'
 
-export default function ThemeRegistry(props) {
+export default function ThemeRegistry(props: any) {
 	const { options, children } = props
 
 	const [{ cache, flush }] = useState(() => {

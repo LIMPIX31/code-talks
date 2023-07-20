@@ -22,12 +22,7 @@ export const FooterFragment: FC = () => (
 		alignItems='center'
 		justifyContent='center'
 	>
-		<Box
-			width='45vmax'
-			position='relative'
-			left='-2vmax'
-			component={makeScrolly({ x: { out: [-500, 0] } })}
-		>
+		<Box width='45vmax' position='relative' left='-2vmax' component={makeScrolly({ x: { out: [-500, 0] } })}>
 			<CodetalksBanner />
 			<Box
 				position='absolute'

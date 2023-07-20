@@ -67,5 +67,4 @@ export const scrolly =
 			offset?: [number | 'self', number | 'self'] | number
 		},
 	): FC<ComponentProps<C>> =>
-	(props) =>
-		<Scrolly distance={distance} options={options} {...props} />
+	(props) => <Scrolly distance={distance} options={options} {...props} />
