@@ -1,1 +1,1 @@
-# CodeTalks — mind powered community
+# CodeTalks
