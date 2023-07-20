@@ -9,7 +9,6 @@ const nextConfig = {
 		'@pages/home',
 		'@ui/brand',
 		'@ui/header',
-		'@ui/patterns',
 		'@supabase/client',
 		'@ux/parallax',
 	],

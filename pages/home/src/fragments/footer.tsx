@@ -1,3 +1,5 @@
+'use client'
+
 import { FC } from 'react'
 import Box from '@mui/material/Box'
 import { CodetalksBanner } from '@ui/brand'

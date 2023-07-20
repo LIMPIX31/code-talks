@@ -1,6 +1,5 @@
 import { ComponentProps, FC } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
-import { useRef } from 'react'
 
 export function makeVerticalParallax<C extends keyof typeof motion>(
 	page: number,
@@ -9,8 +8,6 @@ export function makeVerticalParallax<C extends keyof typeof motion>(
 ): FC<ComponentProps<C>> {
 	return (props) => {
 		const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1
-
-		const ref = useRef<HTMLDivElement>(null!)
 
 		const { scrollY } = useScroll()
 
@@ -21,6 +18,6 @@ export function makeVerticalParallax<C extends keyof typeof motion>(
 
 		const Component: any = motion[component ?? 'div']
 
-		return <Component ref={ref} style={{ ...deltas }} {...props} />
+		return <Component style={{ ...deltas }} {...props} />
 	}
 }

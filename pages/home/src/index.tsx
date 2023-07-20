@@ -1,5 +1,3 @@
-'use client'
-
 import type { FC } from 'react'
 import Box from '@mui/material/Box'
 import dynamic from 'next/dynamic'
