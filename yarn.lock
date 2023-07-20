@@ -655,6 +655,7 @@ __metadata:
   resolution: "@page/home@workspace:pages/home"
   dependencies:
     "@mui/material": "npm:^5.14.0"
+    "@supabase/discord": "workspace:^"
     "@types/react": "npm:^18.2.15"
     "@ui/brand": "workspace:^"
     "@ux/parallax": "workspace:^"
@@ -737,6 +738,14 @@ __metadata:
   dependencies:
     "@supabase/supabase-js": "npm:^2.26.0"
     "@types/node": "npm:^20.4.2"
+  languageName: unknown
+  linkType: soft
+
+"@supabase/discord@workspace:^, @supabase/discord@workspace:shared/supabase/discord":
+  version: 0.0.0-use.local
+  resolution: "@supabase/discord@workspace:shared/supabase/discord"
+  dependencies:
+    "@supabase/client": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -1506,6 +1515,7 @@ __metadata:
   resolution: "codetalks@workspace:."
   dependencies:
     "@lmpx-config/eslint": "npm:0.0.8"
+    "@types/node": "npm:^20.4.2"
     eslint: "npm:^8.45.0"
     next: "npm:^13.4.10"
     prettier: "npm:^3.0.0"

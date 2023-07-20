@@ -11,6 +11,7 @@ const nextConfig = {
 		'@ui/header',
 		'@supabase/client',
 		'@ux/parallax',
+		'@supabase/discord',
 	],
 }
 

@@ -1,0 +1,7 @@
+{
+	"name": "@supabase/discord",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@supabase/client": "workspace:^"
+	}
+}
