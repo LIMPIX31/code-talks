@@ -1,10 +1,18 @@
 import { createTheme, type ThemeOptions } from '@mui/material/styles'
 import { mix } from 'polished'
+import { type PaletteColorOptions } from '@mui/material'
 
 const dark = '#101010'
 const light = '#f4f8ff'
 const primary = '#f4f8ff'
 const secondary = '#0c5fff'
+
+declare module '@mui/material' {
+	interface PaletteOptions {
+		magenta: PaletteColorOptions
+		pink: PaletteColorOptions
+	}
+}
 
 const base = {
 	spacing: (abs: number) => `${abs * 6}px`,
@@ -35,6 +43,12 @@ export const darkPalette = {
 		secondary: {
 			main: secondary,
 			'100': mix(0.1, secondary, dark),
+		},
+		magenta: {
+			main: '#390cff',
+		},
+		pink: {
+			main: '#ff0cce',
 		},
 		error: {
 			main: '#ff0c30',

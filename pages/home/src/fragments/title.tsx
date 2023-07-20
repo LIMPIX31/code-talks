@@ -23,6 +23,30 @@ export const TitleFragment: FC = () => (
 		}}
 	>
 		<Box position='relative' minHeight='100vh' sx={{ pt: 64 }}>
+			<Box
+				position='absolute'
+				bottom='0'
+				left='0'
+				width='10vmax'
+				height='20vmax'
+				sx={{
+					backgroundColor: 'magenta.main',
+					filter: 'blur(200px)',
+					opacity: 0.6,
+				}}
+			/>
+			<Box
+				position='absolute'
+				top='50%'
+				right='0'
+				width='10vmax'
+				height='20vmax'
+				sx={{
+					backgroundColor: 'pink.main',
+					filter: 'blur(200px)',
+					opacity: 0.2,
+				}}
+			/>
 			<Box position='absolute' top='50%' left='0' display='flex' flexDirection='row' sx={{ translate: '0 -50%' }}>
 				<Typography fontSize='10vmax' lineHeight='12vmax' whiteSpace='nowrap' component='div'>
 					<Box
