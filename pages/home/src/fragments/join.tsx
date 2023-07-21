@@ -5,12 +5,21 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import { rgba } from 'polished'
 import { scrolly } from '@ux/parallax'
+import dynamic from 'next/dynamic'
 
 const makeScrolly = (d: Parameters<typeof scrolly>[0], speed?: number) =>
 	scrolly(d, { bindTo: 'join', offset: -250, speed })
 
+const Stone = dynamic(() => import('@ui/brand').then(({ Stone }) => Stone))
+
 export const JoinFragment: FC = () => (
 	<Box data-parallax-id='join' position='relative' minHeight='100vh'>
+		<Stone
+			position='absolute'
+			bottom='-10vmax'
+			right='5vmax'
+			component={makeScrolly({ y: [50, 0, -50] })}
+		/>
 		<Container maxWidth='xl' sx={{ py: 16 }}>
 			<Box fontSize={['4vmax', '5vmax']} fontWeight={900} lineHeight='5vmax'>
 				<Box component={makeScrolly({ x: [-1000, 0, 50] })}>Join as soon as possible</Box>
