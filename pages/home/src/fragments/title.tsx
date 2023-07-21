@@ -33,6 +33,7 @@ const sparkles = [
 		left='70vmax'
 		key='sprkl3'
 		sx={{ scale: '1.5' }}
+		zIndex={2}
 		component={makeScrolly({ y: [0, 0, 300], x: [0, 0, -1500], rotate: [0, 19, 200] })}
 	/>,
 ]
