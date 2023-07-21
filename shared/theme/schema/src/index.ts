@@ -1,20 +1,39 @@
 import { createTheme, type ThemeOptions } from '@mui/material/styles'
 import { mix } from 'polished'
-import { type PaletteColorOptions } from '@mui/material'
+import { PaletteColor, type PaletteColorOptions } from '@mui/material'
 
 const dark = '#101010'
 const light = '#f4f8ff'
 const primary = '#f4f8ff'
 const secondary = '#0c5fff'
 
-declare module '@mui/material' {
+declare module '@mui/material/styles' {
+	interface Palette {
+		magenta: PaletteColor
+		pink: PaletteColor
+		lime: PaletteColor
+	}
+
 	interface PaletteOptions {
 		magenta: PaletteColorOptions
 		pink: PaletteColorOptions
+		lime: PaletteColorOptions
+	}
+
+	interface BreakpointOverrides {
+		sm: false
 	}
 }
 
 const base = {
+	breakpoints: {
+		values: {
+			xs: 0,
+			md: 900,
+			lg: 1200,
+			xl: 1536,
+		},
+	},
 	spacing: (abs: number) => `${abs * 6}px`,
 	transitions: {
 		duration: {
@@ -49,6 +68,9 @@ export const darkPalette = {
 		},
 		pink: {
 			main: '#ff0cce',
+		},
+		lime: {
+			main: '#0cff61',
 		},
 		error: {
 			main: '#ff0c30',

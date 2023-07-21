@@ -660,6 +660,7 @@ __metadata:
     "@ui/brand": "workspace:^"
     "@ux/parallax": "workspace:^"
     next: "npm:^13.4.10"
+    polished: "npm:^4.2.2"
   peerDependencies:
     "@mui/material": 5
     next: 13

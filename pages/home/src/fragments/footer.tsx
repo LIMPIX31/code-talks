@@ -6,7 +6,7 @@ import { CodetalksBanner } from '@ui/brand'
 import { scrolly } from '@ux/parallax'
 import Typography from '@mui/material/Typography'
 
-const makeScrolly = (d: Parameters<typeof scrolly>[0]) => scrolly(d, { bindTo: 'footer', offset: ['self', 'self'] })
+const makeScrolly = (d: Parameters<typeof scrolly>[0]) => scrolly(d, { bindTo: 'footer' })
 
 export const FooterFragment: FC = () => (
 	<Box
@@ -21,8 +21,9 @@ export const FooterFragment: FC = () => (
 		flexDirection='column'
 		alignItems='center'
 		justifyContent='center'
+		overflow='hidden'
 	>
-		<Box width='45vmax' position='relative' left='-2vmax' component={makeScrolly({ x: { out: [-500, 0] } })}>
+		<Box width='45vmax' position='relative' left='-2vmax' component={makeScrolly({ x: [-500, 0, 0] })}>
 			<CodetalksBanner />
 			<Box
 				position='absolute'
@@ -34,6 +35,7 @@ export const FooterFragment: FC = () => (
 					backgroundColor: 'secondary.main',
 					filter: 'blur(300px)',
 					opacity: 0.5,
+					borderRadius: '20%',
 				}}
 			/>
 		</Box>
@@ -41,7 +43,7 @@ export const FooterFragment: FC = () => (
 			position='relative'
 			width='39vmax'
 			height='4vmax'
-			component={makeScrolly({ y: { out: [-200, 0] }, x: { out: [500, 0] } })}
+			component={makeScrolly({ y: [-200, 0, 0], x: [500, 0, 0] })}
 			sx={{
 				backgroundColor: 'secondary.main',
 				rotate: '5deg',

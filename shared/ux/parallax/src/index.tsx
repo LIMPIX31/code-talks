@@ -1,20 +1,22 @@
 'use client'
 
-import { ComponentProps, FC, useMemo } from 'react'
+import { ComponentProps, FC, RefObject, useMemo } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
 
 export interface ScrollyProps<C extends keyof typeof motion> {
-	distance: { [k: string]: { in?: number[]; out: number[] } }
+	distance: { [k: string]: [number, number, number] }
 	options: {
 		component?: C
 		bindTo?: string | 'root'
 		offset?: [number | 'self', number | 'self'] | number
+		relativeTo?: RefObject<HTMLElement>
+		speed?: number
 	}
 }
 
 const Scrolly = <C extends keyof typeof motion>({
 	distance,
-	options: { component, bindTo, offset = [0, 0] },
+	options: { component, bindTo, offset = [0, 0], relativeTo, speed = 1 },
 	...props
 }: ComponentProps<C> & ScrollyProps<C>) => {
 	const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1
@@ -23,33 +25,38 @@ const Scrolly = <C extends keyof typeof motion>({
 
 	const range = useMemo(() => {
 		if (typeof document === 'undefined') {
-			return [0, 1]
+			return [0, 0, 1]
 		}
 
 		const anchor = bindTo === 'root' ? document.body : document.querySelector(`[data-parallax-id="${bindTo}"]`)
 
 		if (!anchor) {
-			return [0, viewportHeight]
+			return [0, 0, viewportHeight]
 		}
 
-		const { top, bottom } = anchor.getBoundingClientRect()
+		const { top: topV, bottom: bottomV, height } = anchor.getBoundingClientRect()
+
+		const relative = relativeTo?.current?.scrollTop ?? window.scrollY
+
+		const top = topV + relative
+		const bottom = bottomV + relative
 
 		let [offsetX, offsetY] = typeof offset === 'number' ? [offset, offset] : offset
 
 		if (offsetX === 'self') {
-			offsetX = -top
+			offsetX = -height
 		}
 
 		if (offsetY === 'self') {
-			offsetY = -top
+			offsetY = -height
 		}
 
-		return [top + offsetX, bottom + offsetY]
-	}, [bindTo, offset, viewportHeight])
+		return [(top + offsetX - height) * speed, top + offsetX, (bottom + offsetY) * speed]
+	}, [bindTo, offset, relativeTo, speed, viewportHeight])
 
-	const deltas = Object.entries(distance).reduce<any>((a, [key, { in: iin, out }]) => {
+	const deltas = Object.entries(distance).reduce<any>((a, [key, out]) => {
 		// eslint-disable-next-line react-hooks/rules-of-hooks
-		a[key] = useTransform(scrollY, iin ?? range, out)
+		a[key] = useTransform(scrollY, range, out)
 		return a
 	}, {})
 
@@ -60,11 +67,13 @@ const Scrolly = <C extends keyof typeof motion>({
 
 export const scrolly =
 	<C extends keyof typeof motion>(
-		distance: { [k: string]: { in?: number[]; out: number[] } },
+		distance: { [k: string]: [number, number, number] },
 		options: {
 			component?: C
 			bindTo?: string | 'root'
 			offset?: [number | 'self', number | 'self'] | number
+			relativeTo?: RefObject<HTMLElement>
+			speed?: number
 		},
 	): FC<ComponentProps<C>> =>
 	(props) => <Scrolly distance={distance} options={options} {...props} />
