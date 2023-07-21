@@ -1,6 +1,6 @@
 'use client'
 
-import { ComponentProps, FC, useMemo } from 'react'
+import { ComponentProps, FC, useEffect, useMemo, useState } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
 
 export interface ScrollyProps<C extends keyof typeof motion> {
@@ -21,6 +21,18 @@ const Scrolly = <C extends keyof typeof motion>({
 }: ComponentProps<C> & ScrollyProps<C>) => {
 	const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1
 
+	const [update, setUpdate] = useState(0)
+
+	useEffect(() => {
+		const observer = new ResizeObserver(() => setUpdate((u) => u + 1))
+
+		observer.observe(document.body)
+
+		return () => {
+			observer.unobserve(document.body)
+		}
+	}, [])
+
 	const anchor = useMemo(
 		() =>
 			typeof document !== 'undefined'
@@ -28,7 +40,7 @@ const Scrolly = <C extends keyof typeof motion>({
 					? document.body
 					: document.querySelector(`[data-parallax-id="${bindTo}"]`)
 				: undefined,
-		[bindTo],
+		[bindTo, update],
 	)
 
 	const { scrollY } = useScroll()
@@ -71,7 +83,8 @@ const Scrolly = <C extends keyof typeof motion>({
 		}
 
 		return [(top + offsetX - height) * speed, top + offsetX, (bottom + offsetY) * speed]
-	}, [anchor, offset, speed, sticky, viewportHeight])
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [anchor, offset, speed, sticky, viewportHeight, update])
 
 	const deltas = Object.entries(distance).reduce<any>((a, [key, out]) => {
 		out = out.map((o) => {
