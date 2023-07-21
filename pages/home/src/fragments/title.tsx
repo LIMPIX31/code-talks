@@ -9,10 +9,37 @@ import dynamic from 'next/dynamic'
 
 const makeScrolly = (d: Parameters<typeof scrolly>[0]) => scrolly(d, { bindTo: 'title' })
 
-const D3Logo = dynamic(() => import('@ui/brand').then(({ D3Logo }) => D3Logo), { ssr: false })
+const D3Logo = dynamic(() => import('@ui/brand').then(({ D3Logo }) => D3Logo))
+const Sparkle = dynamic(() => import('@ui/brand').then(({ Sparkle }) => Sparkle))
+
+const sparkles = [
+	<Sparkle
+		position='absolute'
+		top='15vmax'
+		left='2vmax'
+		key='sprkl1'
+		component={makeScrolly({ y: [0, 0, 500], x: [0, 0, 200], rotate: [0, 15, -20] })}
+	/>,
+	<Sparkle
+		position='absolute'
+		top='15vmax'
+		right='4vmax'
+		key='sprkl2'
+		component={makeScrolly({ y: [0, 0, 300], x: [0, 0, -300], rotate: [0, -35, -90] })}
+	/>,
+	<Sparkle
+		position='absolute'
+		bottom='15vmax'
+		left='70vmax'
+		key='sprkl3'
+		sx={{ scale: '1.5' }}
+		component={makeScrolly({ y: [0, 0, 300], x: [0, 0, -1500], rotate: [0, 19, 200] })}
+	/>,
+]
 
 export const TitleFragment: FC = () => (
-	<Box overflow='hidden'>
+	<Box overflow='hidden' position='relative'>
+		{sparkles}
 		<Container
 			data-parallax-id='title'
 			sx={{
@@ -78,11 +105,7 @@ export const TitleFragment: FC = () => (
 						<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: [0, 0, -200] })}>
 							To code
 						</Box>
-						<Box
-							fontSize='inherit'
-							lineHeight='inherit'
-							component={makeScrolly({ y: [0, 0, -100], x: [0, 0, -500] })}
-						>
+						<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: [0, 0, -100], x: [0, 0, -500] })}>
 							To talk
 						</Box>
 					</Typography>
@@ -100,7 +123,7 @@ export const TitleFragment: FC = () => (
 								opacity: 0.2,
 							}}
 						/>
-						<Box position='relative' left={['-10vmax', '5vmax']}>
+						<Box position='relative' left={['-17vmax', '5vmax']}>
 							<D3Logo />
 						</Box>
 					</Box>
