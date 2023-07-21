@@ -6,6 +6,8 @@ import Container from '@mui/material/Container'
 import { rgba } from 'polished'
 import { scrolly } from '@ux/parallax'
 import dynamic from 'next/dynamic'
+import SvgIcon from '@mui/material/SvgIcon'
+import Typography from '@mui/material/Typography'
 
 const makeScrolly = (d: Parameters<typeof scrolly>[0], speed?: number) =>
 	scrolly(d, { bindTo: 'join', offset: -250, speed })
@@ -62,48 +64,59 @@ export const JoinFragment: FC = () => (
 					</Box>
 				</Box>
 			</Box>
-			{/* <Box position='absolute' zIndex={3} top='-13vmax' right='10vmax' height='50vmax'> */}
-			{/*	<Box position='sticky' bottom='0' left='0'> */}
-			{/*		<Box */}
-			{/*			sx={{ */}
-			{/*				py: 2, */}
-			{/*				px: 10, */}
-			{/*				display: 'inline-flex', */}
-			{/*				alignItems: 'center', */}
-			{/*				justifyContent: 'center', */}
-			{/*				background: `linear-gradient(45deg, #e7f5c7, #90bada)`, */}
-			{/*				gap: 10, */}
-			{/*				borderRadius: 3, */}
-			{/*			}} */}
-			{/*		> */}
-			{/*			<SvgIcon */}
-			{/*				sx={{ */}
-			{/*					color: 'background.default', */}
-			{/*					fontSize: '8vmax', */}
-			{/*					height: 'auto', */}
-			{/*				}} */}
-			{/*			> */}
-			{/*				<svg width='1024' height='349' version='1.1' viewBox='0 0 1024 349' xmlns='http://www.w3.org/2000/svg'> */}
-			{/*					<path */}
-			{/*						d='m5.63 174h1013c-225 0-225-169-225-169s0 169 225 169c-225 0-225 169-225 169' */}
-			{/*						fill='none' */}
-			{/*						stroke='currentColor' */}
-			{/*						strokeLinecap='round' */}
-			{/*						strokeLinejoin='round' */}
-			{/*						strokeMiterlimit='0' */}
-			{/*						strokeWidth='1vmax' */}
-			{/*					/> */}
-			{/*				</svg> */}
-			{/*			</SvgIcon> */}
-			{/*			<Typography color='background.default' fontSize='3vmax' fontWeight={900}> */}
-			{/*				Join */}
-			{/*			</Typography> */}
-			{/*		</Box> */}
-			{/*		<Typography color='#e7f5c7' fontSize='3vmax' fontWeight={900}> */}
-			{/*			There&apos;s already 10 of us */}
-			{/*		</Typography> */}
-			{/*	</Box> */}
-			{/* </Box> */}
+			<Box
+				position='absolute'
+				zIndex={3}
+				top='-17vmax'
+				right='10vmax'
+				height={['60vmax', '50vmax']}
+				data-parallax-sticky='join-box'
+				data-parallax-id='join-box'
+			>
+				<Box
+					sx={{ cursor: 'pointer' }}
+					component={scrolly(
+						{ y: [0, 0, 'height'], rotate: [0, -10, -5] },
+						{ sticky: 'join-box', bindTo: 'join-box', offset: -500 },
+					)}
+				>
+					<Box
+						sx={{
+							py: 2,
+							px: 10,
+							display: 'inline-flex',
+							alignItems: 'center',
+							justifyContent: 'center',
+							backgroundColor: 'primary.main',
+							gap: 10,
+							borderRadius: 3,
+						}}
+					>
+						<SvgIcon
+							sx={{
+								color: 'background.default',
+								fontSize: '8vmax',
+								height: 'auto',
+							}}
+						>
+							<svg width='1024' height='349' version='1.1' viewBox='0 0 1024 349' xmlns='http://www.w3.org/2000/svg'>
+								<path
+									d='m5.63 174h1013c-225 0-225-169-225-169s0 169 225 169c-225 0-225 169-225 169'
+									fill='none'
+									stroke='currentColor'
+									strokeLinecap='round'
+									strokeLinejoin='round'
+									strokeMiterlimit='0'
+									strokeWidth='1vmax'
+								/>
+							</svg>
+						</SvgIcon>
+						<Typography color='background.default' fontSize='3vmax' fontWeight={900}>
+							Join
+						</Typography>
+					</Box>
+				</Box>
+			</Box>
 		</Container>
 		<Box
 			position='absolute'

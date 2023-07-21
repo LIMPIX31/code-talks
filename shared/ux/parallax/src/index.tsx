@@ -1,25 +1,35 @@
 'use client'
 
-import { ComponentProps, FC, RefObject, useMemo } from 'react'
+import { ComponentProps, FC, useMemo } from 'react'
 import { useScroll, useTransform, motion } from 'framer-motion'
 
 export interface ScrollyProps<C extends keyof typeof motion> {
-	distance: { [k: string]: [number, number, number] }
+	distance: { [k: string]: (number | string)[] }
 	options: {
 		component?: C
 		bindTo?: string | 'root'
 		offset?: [number | 'self', number | 'self'] | number
-		relativeTo?: RefObject<HTMLElement>
+		sticky?: string
 		speed?: number
 	}
 }
 
 const Scrolly = <C extends keyof typeof motion>({
 	distance,
-	options: { component, bindTo, offset = [0, 0], relativeTo, speed = 1 },
+	options: { component, bindTo = 'root', offset = [0, 0], sticky, speed = 1 },
 	...props
 }: ComponentProps<C> & ScrollyProps<C>) => {
 	const viewportHeight = typeof window !== 'undefined' ? window.innerHeight : 1
+
+	const anchor = useMemo(
+		() =>
+			typeof document !== 'undefined'
+				? bindTo === 'root'
+					? document.body
+					: document.querySelector(`[data-parallax-id="${bindTo}"]`)
+				: undefined,
+		[bindTo],
+	)
 
 	const { scrollY } = useScroll()
 
@@ -28,18 +38,27 @@ const Scrolly = <C extends keyof typeof motion>({
 			return [0, 0, 1]
 		}
 
-		const anchor = bindTo === 'root' ? document.body : document.querySelector(`[data-parallax-id="${bindTo}"]`)
-
 		if (!anchor) {
 			return [0, 0, viewportHeight]
 		}
 
-		const { top: topV, bottom: bottomV, height } = anchor.getBoundingClientRect()
+		const { top: topAnchor, bottom: bottomAnchor, height } = anchor.getBoundingClientRect()
 
-		const relative = relativeTo?.current?.scrollTop ?? window.scrollY
+		let top = topAnchor + window.scrollY
+		let bottom = bottomAnchor + window.scrollY
 
-		const top = topV + relative
-		const bottom = bottomV + relative
+		if (sticky) {
+			const relation = document.querySelector(`[data-parallax-sticky="${sticky}"]`)
+			if (relation) {
+				const { top: topRelLocal, bottom: bottomRelLocal } = relation.getBoundingClientRect()
+
+				const topRel = topRelLocal + window.scrollY
+				const bottomRel = bottomRelLocal + window.scrollY
+
+				top = topRel
+				bottom = bottomRel
+			}
+		}
 
 		let [offsetX, offsetY] = typeof offset === 'number' ? [offset, offset] : offset
 
@@ -52,9 +71,16 @@ const Scrolly = <C extends keyof typeof motion>({
 		}
 
 		return [(top + offsetX - height) * speed, top + offsetX, (bottom + offsetY) * speed]
-	}, [bindTo, offset, relativeTo, speed, viewportHeight])
+	}, [anchor, offset, speed, sticky, viewportHeight])
 
 	const deltas = Object.entries(distance).reduce<any>((a, [key, out]) => {
+		out = out.map((o) => {
+			if (o === 'height') {
+				return anchor?.getBoundingClientRect().height ?? 0
+			}
+
+			return o
+		})
 		// eslint-disable-next-line react-hooks/rules-of-hooks
 		a[key] = useTransform(scrollY, range, out)
 		return a
@@ -67,12 +93,12 @@ const Scrolly = <C extends keyof typeof motion>({
 
 export const scrolly =
 	<C extends keyof typeof motion>(
-		distance: { [k: string]: [number, number, number] },
+		distance: { [k: string]: (number | string)[] },
 		options: {
 			component?: C
 			bindTo?: string | 'root'
 			offset?: [number | 'self', number | 'self'] | number
-			relativeTo?: RefObject<HTMLElement>
+			sticky?: string
 			speed?: number
 		},
 	): FC<ComponentProps<C>> =>
