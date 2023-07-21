@@ -4,12 +4,16 @@ import { FC } from 'react'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import { rgba } from 'polished'
+import { scrolly } from '@ux/parallax'
+
+const makeScrolly = (d: Parameters<typeof scrolly>[0], speed?: number) =>
+	scrolly(d, { bindTo: 'join', offset: -250, speed })
 
 export const JoinFragment: FC = () => (
 	<Box data-parallax-id='join' position='relative' minHeight='100vh'>
 		<Container maxWidth='xl' sx={{ py: 16 }}>
-			<Box fontSize='5vmax' fontWeight={900} lineHeight='5vmax'>
-				<Box>Join as soon as possible</Box>
+			<Box fontSize={['4vmax', '5vmax']} fontWeight={900} lineHeight='5vmax'>
+				<Box component={makeScrolly({ x: [-1000, 0, 50] })}>Join as soon as possible</Box>
 				<Box
 					height='7vmax'
 					width='60vmax'
@@ -17,8 +21,9 @@ export const JoinFragment: FC = () => (
 						my: 4,
 						backgroundColor: 'primary.main',
 					}}
+					component={makeScrolly({ x: [1000, 0, -50] })}
 				/>
-				<Box>
+				<Box component={makeScrolly({ y: [500, 0, -10] })}>
 					and start{' '}
 					<Box
 						display='inline'
@@ -35,7 +40,7 @@ export const JoinFragment: FC = () => (
 						creating
 					</Box>
 				</Box>
-				<Box>
+				<Box component={makeScrolly({ y: [500, 0, -10] }, 0.5)}>
 					with{' '}
 					<Box
 						display='inline'

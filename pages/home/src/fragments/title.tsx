@@ -51,9 +51,9 @@ export const TitleFragment: FC = () => (
 					<Typography fontSize='10vmax' lineHeight='12vmax' whiteSpace='nowrap' component='div'>
 						<Box
 							component={makeScrolly({
-								x: { out: [0, -500] },
-								y: { out: [0, -400] },
-								rotate: { out: [0, -20] },
+								x: [0, 0, -500],
+								y: [0, 0, -400],
+								rotate: [0, 0, -20],
 							})}
 							sx={{
 								fontSize: '3vmax',
@@ -75,18 +75,18 @@ export const TitleFragment: FC = () => (
 						>
 							I don&apos;t know what to write
 						</Box>
-						<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: { out: [0, -200] } })}>
+						<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: [0, 0, -200] })}>
 							To code
 						</Box>
 						<Box
 							fontSize='inherit'
 							lineHeight='inherit'
-							component={makeScrolly({ y: { out: [0, -100] }, x: { out: [0, -500] } })}
+							component={makeScrolly({ y: [0, 0, -100], x: [0, 0, -500] })}
 						>
 							To talk
 						</Box>
 					</Typography>
-					<Box component={makeScrolly({ y: { out: [0, 100] }, x: { out: [0, 50] } })} position='relative' flexShrink='0'>
+					<Box component={makeScrolly({ y: [0, 0, 100], x: [0, 0, 50] })} position='relative' flexShrink='0'>
 						<Box
 							position='absolute'
 							left='10%'
