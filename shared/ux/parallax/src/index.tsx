@@ -52,7 +52,7 @@ const Scrolly = <C extends keyof typeof motion>({
 		}
 
 		return [(top + offsetX - height) * speed, top + offsetX, (bottom + offsetY) * speed]
-	}, [bindTo, offset, relativeTo, viewportHeight])
+	}, [bindTo, offset, relativeTo, speed, viewportHeight])
 
 	const deltas = Object.entries(distance).reduce<any>((a, [key, out]) => {
 		// eslint-disable-next-line react-hooks/rules-of-hooks

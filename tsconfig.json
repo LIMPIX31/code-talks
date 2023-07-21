@@ -34,14 +34,9 @@
 	  "suppressImplicitAnyIndexErrors": false,
 	  "noStrictGenericChecks": false,
 	  "baseUrl": "./",
-	  "paths": {
-		  "@app/entrypoint": [
-			  "app/entrypoint"
-		  ],
-		  "@theme/schema": [
-			  "shared/theme/schema"
-		  ]
-	  },
+	  "types": [
+		  "next"
+	  ],
 	  "plugins": [
       {
         "name": "next"

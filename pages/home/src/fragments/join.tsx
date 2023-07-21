@@ -6,8 +6,6 @@ import Container from '@mui/material/Container'
 import { rgba } from 'polished'
 import { scrolly } from '@ux/parallax'
 import dynamic from 'next/dynamic'
-import SvgIcon from '@mui/material/SvgIcon'
-import Typography from '@mui/material/Typography'
 
 const makeScrolly = (d: Parameters<typeof scrolly>[0], speed?: number) =>
 	scrolly(d, { bindTo: 'join', offset: -250, speed })
