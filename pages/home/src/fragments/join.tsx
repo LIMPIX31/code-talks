@@ -8,7 +8,6 @@ import { scrolly } from '@ux/parallax'
 import dynamic from 'next/dynamic'
 import SvgIcon from '@mui/material/SvgIcon'
 import Typography from '@mui/material/Typography'
-import { useSession } from '@entity/viewer'
 import { JoinContract } from '@feature/invite-join'
 
 const makeScrolly = (d: Parameters<typeof scrolly>[0], speed?: number) =>
@@ -175,11 +174,7 @@ const JoinSubfrag: FC<{ onClick: () => void }> = ({ onClick }) => (
 	</Box>
 )
 
-export const JoinFragment: FC = () => {
-	const { data } = useSession()
-
-	console.log(data)
-
+export const JoinFragment: FC<{ auth: boolean }> = ({ auth }) => {
 	const contract = useState(false)
 
 	const [, submit] = contract
@@ -190,7 +185,7 @@ export const JoinFragment: FC = () => {
 			<StoneSubfrag />
 			<Container maxWidth='xl' sx={{ py: 16 }}>
 				<TextSubfrag />
-				{!data.session && <JoinSubfrag onClick={() => submit(true)} />}
+				{!auth && <JoinSubfrag onClick={() => submit(true)} />}
 			</Container>
 			<GradientsSubfrag />
 		</Box>

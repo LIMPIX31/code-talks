@@ -1,7 +1,13 @@
 {
 	"name": "@supabase/discord",
 	"main": "src/index.ts",
+	"devDependencies": {
+		"@types/react": "^18.2.15"
+	},
 	"dependencies": {
 		"@supabase/client": "workspace:^"
+	},
+	"peerDependencies": {
+		"react": "18"
 	}
 }

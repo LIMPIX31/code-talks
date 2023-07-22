@@ -22,7 +22,9 @@
   "dependencies": {
     "@page/home": "workspace:^",
     "@studio-freight/react-lenis": "^0.0.23",
+    "@supabase/auth-helpers-nextjs": "^0.7.3",
     "@supabase/client": "workspace:^",
+    "@supabase/supabase-js": "^2.26.0",
     "@theme/schema": "workspace:^",
     "@widget/header": "workspace:^",
     "next": "^13.4.10",

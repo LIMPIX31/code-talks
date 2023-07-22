@@ -1,25 +1,23 @@
-'use client'
-
-import { FC, useMemo } from 'react'
 import { Header as SharedHeader } from '@ui/header'
-import { useSession, ViewerHeaderAvatar } from '@entity/viewer'
+import { ViewerHeaderAvatar } from '@entity/viewer'
+import { useServerClient } from '@supabase/client'
+import { cookies } from 'next/headers'
 
-export const Header: FC = () => {
-	const { data } = useSession()
+export async function Header() {
+	const supabase = useServerClient({ cookies })
 
-	const viewer = useMemo(() => {
-		if (!data?.session) {
-			return
-		}
+	const { data } = await supabase.auth.getSession()
 
-		const { session } = data
+	if (!data?.session) {
+		return <SharedHeader features={[<div key='vwr' />]} />
+	}
 
-		// eslint-disable-next-line consistent-return
-		return {
-			uid: session.user.user_metadata['full_name'],
-			avatar: session.user.user_metadata['picture'],
-		}
-	}, [data])
+	const { session } = data
 
-	return <SharedHeader features={[viewer ? <ViewerHeaderAvatar viever={viewer} key='vwr' /> : <div />]} />
+	const viewer = {
+		uid: session.user.user_metadata['full_name'],
+		avatar: session.user.user_metadata['picture'],
+	}
+
+	return <SharedHeader features={[<ViewerHeaderAvatar viever={viewer} key='vwr' />]} />
 }

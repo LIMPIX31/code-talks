@@ -24,7 +24,9 @@ __metadata:
     "@next/bundle-analyzer": "npm:^13.4.10"
     "@page/home": "workspace:^"
     "@studio-freight/react-lenis": "npm:^0.0.23"
+    "@supabase/auth-helpers-nextjs": "npm:^0.7.3"
     "@supabase/client": "workspace:^"
+    "@supabase/supabase-js": "npm:^2.26.0"
     "@theme/schema": "workspace:^"
     "@types/node": "npm:^20.4.2"
     "@types/react": "npm:^18.2.15"
@@ -862,6 +864,7 @@ __metadata:
     "@entity/viewer": "workspace:^"
     "@feature/invite-join": "workspace:^"
     "@mui/material": "npm:^5.14.0"
+    "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.15"
     "@ui/brand": "workspace:^"
     "@ux/parallax": "workspace:^"
@@ -953,12 +956,39 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@supabase/auth-helpers-nextjs@npm:^0.7.3":
+  version: 0.7.3
+  resolution: "@supabase/auth-helpers-nextjs@npm:0.7.3"
+  dependencies:
+    "@supabase/auth-helpers-shared": "npm:0.4.1"
+    set-cookie-parser: "npm:^2.6.0"
+  peerDependencies:
+    "@supabase/supabase-js": ^2.19.0
+  checksum: 44ee61e95f102ede958dc682c93f14156a0b56c35238eb8a61a76edab6dc471a8a8620d735497af9397b082395cab43ff0b0cce35a040746fcaadb8e6bbf55db
+  languageName: node
+  linkType: hard
+
+"@supabase/auth-helpers-shared@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@supabase/auth-helpers-shared@npm:0.4.1"
+  dependencies:
+    jose: "npm:^4.14.3"
+  peerDependencies:
+    "@supabase/supabase-js": ^2.19.0
+  checksum: b5b142088b2e1398d7c3d30d766c9441d3751094b90426e0b5b7dc5f74537d7489b94cceed50c09cd05cde22638803aa8f1caeb48768d86f827da6057a291a1b
+  languageName: node
+  linkType: hard
+
 "@supabase/client@workspace:^, @supabase/client@workspace:shared/supabase/client":
   version: 0.0.0-use.local
   resolution: "@supabase/client@workspace:shared/supabase/client"
   dependencies:
+    "@supabase/auth-helpers-nextjs": "npm:^0.7.3"
     "@supabase/supabase-js": "npm:^2.26.0"
-    "@types/node": "npm:^20.4.2"
+    next: "npm:^13.4.12"
+  peerDependencies:
+    "@supabase/supabase-js": 2
+    next: 13
   languageName: unknown
   linkType: soft
 
@@ -967,6 +997,9 @@ __metadata:
   resolution: "@supabase/discord@workspace:shared/supabase/discord"
   dependencies:
     "@supabase/client": "workspace:^"
+    "@types/react": "npm:^18.2.15"
+  peerDependencies:
+    react: 18
   languageName: unknown
   linkType: soft
 
@@ -1324,6 +1357,7 @@ __metadata:
   dependencies:
     "@entity/viewer": "workspace:^"
     "@mui/material": "npm:^5.14.1"
+    "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.15"
     "@ui/header": "workspace:^"
     next: "npm:^13.4.12"
@@ -3356,6 +3390,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^4.14.3":
+  version: 4.14.4
+  resolution: "jose@npm:4.14.4"
+  checksum: cb13d70f2336c0a45210f8e4e71ed8d4d82a884ad66776308f5ab9a90e2087419782e0b288d2a9070657620637f0d2dbcac6f3164ed9ba8903c0096e282cec3c
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -4551,6 +4592,13 @@ __metadata:
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
   checksum: 9f8c1b2d800800d0b589de1477c753492de5c1548d4ade52f57f1d1f5e04af5481554d75ce5e5c43d4004b80a3eb714398d6907027dc0534177b7539119f4454
+  languageName: node
+  linkType: hard
+
+"set-cookie-parser@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "set-cookie-parser@npm:2.6.0"
+  checksum: 739da029f0e56806a103fcd5501d9c475e19e77bd8274192d7ae5c374ae714a82bba9a7ac00b0330a18227c5644b08df9e442240527be578f5a6030f9bb2bb80
   languageName: node
   linkType: hard
 

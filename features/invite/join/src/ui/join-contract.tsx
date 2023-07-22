@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import DialogActions from '@mui/material/DialogActions'
 import Button from '@mui/material/Button'
 import DialogContentText from '@mui/material/DialogContentText'
-import { login } from '@supabase/discord'
+import { useDiscordlogin } from '@supabase/discord'
 
 interface DialogController {
 	isOpened: boolean
@@ -76,6 +76,8 @@ const DisagreeDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onC
 )
 
 export const JoinContract: FC<JoinContractProps> = ({ skipTerms, state: [state, set] }) => {
+	const { login } = useDiscordlogin()
+
 	const [termsDialog, setTermsDialog] = useState(false)
 	const [disagreeDialog, setDisagreeDialog] = useState(false)
 
@@ -88,7 +90,7 @@ export const JoinContract: FC<JoinContractProps> = ({ skipTerms, state: [state, 
 	const submit = useCallback(() => {
 		reset()
 		login()
-	}, [reset])
+	}, [login, reset])
 
 	function disagree() {
 		setTermsDialog(false)

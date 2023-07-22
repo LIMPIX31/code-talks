@@ -4,6 +4,7 @@
 	"dependencies": {
 		"@entity/viewer": "workspace:^",
 		"@feature/invite-join": "workspace:^",
+		"@supabase/client": "workspace:^",
 		"@ui/brand": "workspace:^",
 		"@ux/parallax": "workspace:^",
 		"polished": "^4.2.2"

@@ -3,6 +3,7 @@
 	"main": "src/index.tsx",
 	"dependencies": {
 		"@entity/viewer": "workspace:^",
+		"@supabase/client": "workspace:^",
 		"@ui/header": "workspace:^"
 	},
 	"devDependencies": {
