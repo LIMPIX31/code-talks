@@ -3,6 +3,7 @@ import { mix } from 'polished'
 import { PaletteColor, type PaletteColorOptions } from '@mui/material'
 
 const dark = '#101010'
+const divider = '#232323'
 const light = '#f4f8ff'
 const primary = '#f4f8ff'
 const secondary = '#0c5fff'
@@ -113,6 +114,19 @@ const components = {
 					'&:hover': {
 						border: `3px solid ${darkPalette.palette.primary.main}`,
 					},
+				},
+			},
+		},
+		MuiDialog: {
+			styleOverrides: {
+				container: {
+					backdropFilter: 'saturate(0) blur(10px)',
+				},
+				paper: {
+					background: dark,
+					border: `1px solid ${divider}`,
+					filter: 'none',
+					borderRadius: 6,
 				},
 			},
 		},

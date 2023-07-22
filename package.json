@@ -4,7 +4,10 @@
   "workspaces": [
     "app/**",
     "shared/**",
-    "pages/**"
+    "pages/**",
+    "entities/**",
+    "features/**",
+    "widgets/**"
   ],
   "scripts": {
     "typecheck": "tsc",

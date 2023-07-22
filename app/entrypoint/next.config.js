@@ -12,6 +12,7 @@ const nextConfig = {
 		'@supabase/client',
 		'@ux/parallax',
 		'@supabase/discord',
+		'@entity/viewer',
 	],
 }
 
