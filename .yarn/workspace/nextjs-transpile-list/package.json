@@ -1,0 +1,22 @@
+{
+	"name": "@private/yarn-plugin-nextjs-transpile-list",
+	"version": "1.0.0",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@yarnpkg/builder": "^4.0.0-rc.48",
+		"@yarnpkg/cli": "^4.0.0-rc.48",
+		"@yarnpkg/core": "^4.0.0-rc.48",
+		"@yarnpkg/fslib": "^3.0.0-rc.48",
+		"clipanion": "3.2.0"
+	},
+	"peerDependencies": {
+		"@yarnpkg/cli": "^4.0.0-rc.43",
+		"@yarnpkg/core": "^4.0.0-rc.43",
+		"@yarnpkg/fslib": "^3.0.0-rc.43"
+	},
+	"scripts": {
+		"build": "builder build plugin",
+		"prepack": "yarn run build",
+		"postpack": "rm -rf dist"
+	}
+}
