@@ -26,7 +26,6 @@
     "@supabase/client": "workspace:^",
     "@supabase/supabase-js": "^2.26.0",
     "@theme/schema": "workspace:^",
-    "@ui/lwcs": "workspace:^",
     "@widget/header": "workspace:^",
     "framer-motion": "^10.13.0",
     "next": "^13.4.10",

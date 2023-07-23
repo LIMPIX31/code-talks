@@ -2,6 +2,7 @@ import { Header as SharedHeader } from '@ui/header'
 import { ViewerHeaderAvatar } from '@entity/viewer'
 import { useServerClient } from '@supabase/client'
 import { cookies } from 'next/headers'
+import { LogoutMenuItem } from '@feature/auth-logout'
 
 export async function Header() {
 	const supabase = useServerClient({ cookies })
@@ -19,5 +20,5 @@ export async function Header() {
 		avatar: session.user.user_metadata['picture'],
 	}
 
-	return <SharedHeader features={[<ViewerHeaderAvatar viever={viewer} key='vwr' />]} />
+	return <SharedHeader features={[<ViewerHeaderAvatar features={[<LogoutMenuItem />]} viever={viewer} key='vwr' />]} />
 }

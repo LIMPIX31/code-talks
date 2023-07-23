@@ -7,6 +7,8 @@ import { inter, mabry, pjs } from './fonts'
 import type { ReactNode } from 'react'
 import Spinner from './spinner'
 
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
 	title: 'CodeTalks',
 	description: 'To code to talk',

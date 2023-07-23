@@ -1,18 +1,17 @@
 {
-	"name": "@widget/header",
-	"main": "src/index.tsx",
+	"name": "@feature/auth-logout",
+	"main": "src/index.ts",
 	"dependencies": {
-		"@entity/viewer": "workspace:^",
-		"@feature/auth-logout": "workspace:^",
-		"@supabase/client": "workspace:^",
-		"@ui/header": "workspace:^"
+		"@supabase/client": "workspace:^"
 	},
 	"devDependencies": {
+		"@mui/icons-material": "^5.14.1",
 		"@mui/material": "^5.14.1",
 		"@types/react": "^18.2.15",
 		"next": "^13.4.12"
 	},
 	"peerDependencies": {
+		"@mui/icons-material": "5",
 		"@mui/material": "5",
 		"next": "13",
 		"react": "18",

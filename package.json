@@ -2,6 +2,7 @@
   "name": "codetalks",
   "type": "module",
   "workspaces": [
+    ".yarn/workspace/**",
     "app/**",
     "shared/**",
     "pages/**",

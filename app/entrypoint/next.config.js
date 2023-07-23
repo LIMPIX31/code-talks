@@ -2,18 +2,14 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 })
 
+const workspaces = require('../../.yarn/artifacts/workspaces.json')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	transpilePackages: [
-		'@theme/schema',
-		'@pages/home',
-		'@ui/brand',
-		'@ui/header',
-		'@supabase/client',
-		'@ux/parallax',
-		'@supabase/discord',
-		'@entity/viewer',
-	],
+	transpilePackages: workspaces,
+	experimental: {
+		serverActions: true,
+	},
 }
 
 module.exports = withBundleAnalyzer(nextConfig)
