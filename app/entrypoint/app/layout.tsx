@@ -4,23 +4,23 @@ import ThemeRegistry from './theme-registry'
 import { Header } from '@widget/header'
 import Scroll from './scroll'
 import { inter, mabry, pjs } from './fonts'
-import React, { Suspense } from 'react'
+import type { ReactNode } from 'react'
+import Spinner from './spinner'
 
 export const metadata: Metadata = {
 	title: 'CodeTalks',
 	description: 'To code to talk',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
 	return (
 		<html lang='en'>
 			<body className={`${mabry.variable} ${pjs.variable} ${inter.variable}`}>
-				<Suspense fallback={<div>123</div>}>
-					<ThemeRegistry options={{ key: 'mui' }}>
-						<Header />
-						<Scroll>{children}</Scroll>
-					</ThemeRegistry>
-				</Suspense>
+				<ThemeRegistry options={{ key: 'mui' }}>
+					<Spinner />
+					<Header />
+					<Scroll>{children}</Scroll>
+				</ThemeRegistry>
 			</body>
 		</html>
 	)

@@ -107,7 +107,7 @@ const TextSubfrag: FC = () => (
 					filter: 'brightness(150%) saturate(150%)',
 				})}
 			>
-				code
+				talks
 			</Box>
 		</Box>
 	</Box>

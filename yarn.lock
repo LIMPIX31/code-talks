@@ -30,7 +30,9 @@ __metadata:
     "@theme/schema": "workspace:^"
     "@types/node": "npm:^20.4.2"
     "@types/react": "npm:^18.2.15"
+    "@ui/lwcs": "workspace:^"
     "@widget/header": "workspace:^"
+    framer-motion: "npm:^10.13.0"
     next: "npm:^13.4.10"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -985,10 +987,8 @@ __metadata:
   dependencies:
     "@supabase/auth-helpers-nextjs": "npm:^0.7.3"
     "@supabase/supabase-js": "npm:^2.26.0"
-    next: "npm:^13.4.12"
   peerDependencies:
     "@supabase/supabase-js": 2
-    next: 13
   languageName: unknown
   linkType: soft
 
@@ -1334,6 +1334,19 @@ __metadata:
     "@ui/brand": "workspace:^"
   peerDependencies:
     "@mui/material": 5
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@ui/lwcs@workspace:^, @ui/lwcs@workspace:shared/ui/lwcs":
+  version: 0.0.0-use.local
+  resolution: "@ui/lwcs@workspace:shared/ui/lwcs"
+  dependencies:
+    "@types/react": "npm:^18.2.15"
+    framer-motion: "npm:^10.13.0"
+  peerDependencies:
+    framer-motion: 11
     react: 18
     react-dom: 18
   languageName: unknown
