@@ -1,5 +1,5 @@
 import { createTheme, type ThemeOptions } from '@mui/material/styles'
-import { mix } from 'polished'
+import { mix, rgba } from 'polished'
 import { PaletteColor, type PaletteColorOptions } from '@mui/material'
 
 const dark = '#101010'
@@ -127,6 +127,32 @@ const components = {
 					border: `1px solid ${divider}`,
 					filter: 'none',
 					borderRadius: 6,
+				},
+			},
+		},
+		MuiTooltip: {
+			styleOverrides: {
+				tooltip: {
+					transition: 'none',
+				},
+				popper: {
+					transition: 'none',
+				},
+			},
+		},
+		MuiMenu: {
+			styleOverrides: {
+				paper: {
+					background: dark,
+					border: `1px solid ${divider}`,
+				},
+			},
+		},
+		MuiMenuItem: {
+			styleOverrides: {
+				root: {
+					padding: '2px 16px',
+					minHeight: '32px',
 				},
 			},
 		},
