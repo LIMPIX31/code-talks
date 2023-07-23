@@ -1,5 +1,5 @@
 import { createTheme, type ThemeOptions } from '@mui/material/styles'
-import { mix, rgba } from 'polished'
+import { mix } from 'polished'
 import { PaletteColor, type PaletteColorOptions } from '@mui/material'
 
 const dark = '#101010'

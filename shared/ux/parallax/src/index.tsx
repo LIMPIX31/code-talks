@@ -40,7 +40,7 @@ const Scrolly = <C extends keyof typeof motion>({
 					? document.body
 					: document.querySelector(`[data-parallax-id="${bindTo}"]`)
 				: undefined,
-		[bindTo, update],
+		[bindTo],
 	)
 
 	const { scrollY } = useScroll()

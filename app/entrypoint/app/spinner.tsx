@@ -21,6 +21,7 @@ export default function Spinner() {
 		if (typeof window !== 'undefined') {
 			hide()
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (
