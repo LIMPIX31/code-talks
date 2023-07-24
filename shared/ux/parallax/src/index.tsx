@@ -105,7 +105,7 @@ const Scrolly = <C extends keyof typeof motion>({
 }
 
 export const scrolly =
-	<C extends keyof typeof motion>(
+	<C extends keyof typeof motion = 'div'>(
 		distance: { [k: string]: (number | string)[] },
 		options: {
 			component?: C

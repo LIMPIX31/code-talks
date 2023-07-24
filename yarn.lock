@@ -152,7 +152,7 @@ __metadata:
     "@emotion/react": "npm:^11.11.1"
     "@emotion/styled": "npm:^11.11.0"
     "@mui/icons-material": "npm:^5.14.1"
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@next/bundle-analyzer": "npm:^13.4.12"
     "@page/home": "workspace:^"
     "@page/thanks": "workspace:^"
@@ -411,7 +411,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@entity/viewer@workspace:entities/viewer"
   dependencies:
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.15"
     suspend-react: "npm:^0.1.3"
@@ -469,7 +469,7 @@ __metadata:
   resolution: "@feature/auth-logout@workspace:features/auth/logout"
   dependencies:
     "@mui/icons-material": "npm:^5.14.1"
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.15"
     next: "npm:^13.4.12"
@@ -486,7 +486,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@feature/invite-join@workspace:features/invite/join"
   dependencies:
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@supabase/discord": "workspace:^"
     "@types/react": "npm:^18.2.15"
   peerDependencies:
@@ -555,14 +555,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/base@npm:5.0.0-beta.8":
-  version: 5.0.0-beta.8
-  resolution: "@mui/base@npm:5.0.0-beta.8"
+"@mui/base@npm:5.0.0-beta.7":
+  version: 5.0.0-beta.7
+  resolution: "@mui/base@npm:5.0.0-beta.7"
   dependencies:
-    "@babel/runtime": "npm:^7.22.6"
+    "@babel/runtime": "npm:^7.22.5"
     "@emotion/is-prop-valid": "npm:^1.2.1"
     "@mui/types": "npm:^7.2.4"
-    "@mui/utils": "npm:^5.14.1"
+    "@mui/utils": "npm:^5.13.7"
     "@popperjs/core": "npm:^2.11.8"
     clsx: "npm:^1.2.1"
     prop-types: "npm:^15.8.1"
@@ -574,11 +574,11 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 05274f58ca4ea78b7ca9bf7170d6333010a0ce4cd96c9d4ed7f0741e0c1e72b90327babd8a976af97bc1415beb37064a2fe38b7da8dd74cfddebf478cb3386bf
+  checksum: 31e0f319bedc6f89a57d1e8b82ba7a5138edeeabda8d9fac32ba68b0011dda4f05031a4fc8585e87bfbed35607d98a16e5aa0a99ec44bff0112a4ad33429c3e1
   languageName: node
   linkType: hard
 
-"@mui/core-downloads-tracker@npm:^5.14.1":
+"@mui/core-downloads-tracker@npm:^5.14.0":
   version: 5.14.1
   resolution: "@mui/core-downloads-tracker@npm:5.14.1"
   checksum: 59e30e15c81bfdf5401b45bc899402dda68e9b042e3e39c85e23635d59592d0552d0a4714c3b23014767a9fdb3fd7d171203a777a39400b6a8f70131b3d6114e
@@ -601,16 +601,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.14.1":
-  version: 5.14.1
-  resolution: "@mui/material@npm:5.14.1"
+"@mui/material@npm:5.14.0":
+  version: 5.14.0
+  resolution: "@mui/material@npm:5.14.0"
   dependencies:
-    "@babel/runtime": "npm:^7.22.6"
-    "@mui/base": "npm:5.0.0-beta.8"
-    "@mui/core-downloads-tracker": "npm:^5.14.1"
-    "@mui/system": "npm:^5.14.1"
+    "@babel/runtime": "npm:^7.22.5"
+    "@mui/base": "npm:5.0.0-beta.7"
+    "@mui/core-downloads-tracker": "npm:^5.14.0"
+    "@mui/system": "npm:^5.14.0"
     "@mui/types": "npm:^7.2.4"
-    "@mui/utils": "npm:^5.14.1"
+    "@mui/utils": "npm:^5.13.7"
     "@types/react-transition-group": "npm:^4.4.6"
     clsx: "npm:^1.2.1"
     csstype: "npm:^3.1.2"
@@ -630,7 +630,7 @@ __metadata:
       optional: true
     "@types/react":
       optional: true
-  checksum: 1033116ff4321ebda4d3463dd386d9414bee1f700b1c86b38d009b55212a5079e92db6dbd262f795f004e02a0de3d97897f6c5c58d178cd1588ee8e0430b875e
+  checksum: 54d87a27c7ab36fc499d37f65556b469e545c50d0fa9ab15a5c10bfab4402ccd4a47e300d749205248fd712540b5fcae5ac0d6b4a00c92f931aba68f501228ea
   languageName: node
   linkType: hard
 
@@ -672,7 +672,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/system@npm:^5.14.1":
+"@mui/system@npm:^5.14.0":
   version: 5.14.1
   resolution: "@mui/system@npm:5.14.1"
   dependencies:
@@ -863,7 +863,7 @@ __metadata:
   dependencies:
     "@entity/viewer": "workspace:^"
     "@feature/invite-join": "workspace:^"
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.15"
     "@ui/brand": "workspace:^"
@@ -882,7 +882,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@page/thanks@workspace:pages/thanks"
   dependencies:
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@types/react": "npm:^18.2.15"
     next: "npm:^13.4.12"
   peerDependencies:
@@ -1122,7 +1122,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@theme/schema@workspace:shared/theme/schema"
   dependencies:
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     polished: "npm:^4.2.2"
   peerDependencies:
     "@mui/material": 5
@@ -1431,7 +1431,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ui/brand@workspace:shared/ui/brand"
   dependencies:
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@types/react": "npm:^18.2.15"
     next: "npm:^13.4.12"
   peerDependencies:
@@ -1446,7 +1446,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@ui/header@workspace:shared/ui/header"
   dependencies:
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@types/react": "npm:^18.2.15"
     "@ui/brand": "workspace:^"
   peerDependencies:
@@ -1474,7 +1474,7 @@ __metadata:
   dependencies:
     "@entity/viewer": "workspace:^"
     "@feature/auth-logout": "workspace:^"
-    "@mui/material": "npm:^5.14.1"
+    "@mui/material": "npm:5.14.0"
     "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.15"
     "@ui/header": "workspace:^"

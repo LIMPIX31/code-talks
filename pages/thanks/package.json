@@ -2,7 +2,7 @@
 	"name": "@page/thanks",
 	"main": "src/index.tsx",
 	"devDependencies": {
-		"@mui/material": "^5.14.1",
+		"@mui/material": "5.14.0",
 		"@types/react": "^18.2.15",
 		"next": "^13.4.12"
 	},
