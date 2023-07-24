@@ -155,6 +155,7 @@ __metadata:
     "@mui/material": "npm:^5.14.0"
     "@next/bundle-analyzer": "npm:^13.4.10"
     "@page/home": "workspace:^"
+    "@page/thanks": "workspace:^"
     "@studio-freight/react-lenis": "npm:^0.0.23"
     "@supabase/auth-helpers-nextjs": "npm:^0.7.3"
     "@supabase/client": "workspace:^"
@@ -1030,6 +1031,21 @@ __metadata:
     "@ux/parallax": "workspace:^"
     next: "npm:^13.4.10"
     polished: "npm:^4.2.2"
+  peerDependencies:
+    "@mui/material": 5
+    next: 13
+    react: 18
+    react-dom: 18
+  languageName: unknown
+  linkType: soft
+
+"@page/thanks@workspace:^, @page/thanks@workspace:pages/thanks":
+  version: 0.0.0-use.local
+  resolution: "@page/thanks@workspace:pages/thanks"
+  dependencies:
+    "@mui/material": "npm:^5.14.1"
+    "@types/react": "npm:^18.2.15"
+    next: "npm:^13.4.12"
   peerDependencies:
     "@mui/material": 5
     next: 13
