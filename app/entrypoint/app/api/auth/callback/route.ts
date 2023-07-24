@@ -23,7 +23,7 @@ export async function GET(request: Request) {
 			method: 'POST',
 			body: JSON.stringify({
 				token: session.provider_token,
-				user: session.user.user_metadata.provider_id,
+				user: session.user.user_metadata['provider_id'],
 			}),
 		})
 

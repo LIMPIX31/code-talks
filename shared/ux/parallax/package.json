@@ -5,7 +5,7 @@
 		"@types/react": "^18.2.15"
 	},
 	"dependencies": {
-		"framer-motion": "^10.13.0"
+		"framer-motion": "^10.13.1"
 	},
 	"peerDependencies": {
 		"react": "18",
