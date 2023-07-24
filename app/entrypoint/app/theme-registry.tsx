@@ -55,16 +55,18 @@ export default function ThemeRegistry(props: any) {
 	return (
 		<CacheProvider value={cache}>
 			<ThemeProvider theme={darkSchema}>
-				<CssBaseline />
-				<GlobalStyles
-					styles={({ palette }) => ({
-						'*::selection': {
-							color: palette.background.default,
-							background: palette.primary.main,
-						},
-					})}
-				/>
-				{children}
+				<>
+					<CssBaseline />
+					<GlobalStyles
+						styles={({ palette }) => ({
+							'*::selection': {
+								color: palette.background.default,
+								background: palette.primary.main,
+							},
+						})}
+					/>
+					{children}
+				</>
 			</ThemeProvider>
 		</CacheProvider>
 	)

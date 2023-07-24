@@ -1,0 +1,20 @@
+{
+	"name": "@feature/auth-logout",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@supabase/client": "workspace:^"
+	},
+	"devDependencies": {
+		"@mui/icons-material": "^5.14.1",
+		"@mui/material": "5.14.0",
+		"@types/react": "^18.2.15",
+		"next": "^13.4.12"
+	},
+	"peerDependencies": {
+		"@mui/icons-material": "5",
+		"@mui/material": "5",
+		"next": "13",
+		"react": "18",
+		"react-dom": "18"
+	}
+}

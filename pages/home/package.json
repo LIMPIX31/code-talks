@@ -2,15 +2,17 @@
 	"name": "@page/home",
 	"main": "src/index.tsx",
 	"dependencies": {
-		"@supabase/discord": "workspace:^",
+		"@entity/viewer": "workspace:^",
+		"@feature/invite-join": "workspace:^",
+		"@supabase/client": "workspace:^",
 		"@ui/brand": "workspace:^",
 		"@ux/parallax": "workspace:^",
 		"polished": "^4.2.2"
 	},
 	"devDependencies": {
-		"@mui/material": "^5.14.0",
+		"@mui/material": "5.14.0",
 		"@types/react": "^18.2.15",
-		"next": "^13.4.10"
+		"next": "^13.4.12"
 	},
 	"peerDependencies": {
 		"@mui/material": "5",

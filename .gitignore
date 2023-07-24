@@ -62,3 +62,4 @@ dist
 .vscode-test
 .idea
 .env.local
+!.yarn/workspace

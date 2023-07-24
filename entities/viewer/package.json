@@ -1,0 +1,17 @@
+{
+	"name": "@entity/viewer",
+	"main": "src/index.ts",
+	"dependencies": {
+		"@supabase/client": "workspace:^",
+		"suspend-react": "^0.1.3"
+	},
+	"devDependencies": {
+		"@mui/material": "5.14.0",
+		"@types/react": "^18.2.15"
+	},
+	"peerDependencies": {
+		"@mui/material": "5",
+		"react": "18",
+		"react-dom": "18"
+	}
+}
