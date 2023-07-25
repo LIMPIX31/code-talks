@@ -2,7 +2,6 @@ import './global.css'
 import type { Metadata } from 'next'
 import ThemeRegistry from './theme-registry'
 import { Header } from '@widget/header'
-import Scroll from './scroll'
 import { inter, mabry, pjs } from './fonts'
 import type { ReactNode } from 'react'
 import Spinner from './spinner'
@@ -21,7 +20,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 				<ThemeRegistry options={{ key: 'mui' }}>
 					<Spinner />
 					<Header />
-					<Scroll>{children}</Scroll>
+					{children}
 				</ThemeRegistry>
 			</body>
 		</html>
