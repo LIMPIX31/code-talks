@@ -63,3 +63,4 @@ dist
 .idea
 .env.local
 !.yarn/workspace
+.vercel

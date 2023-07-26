@@ -55,8 +55,10 @@ export const darkPalette = {
 		mode: 'dark',
 		primary: {
 			main: primary,
-			'100': mix(0.1, primary, dark),
+			'100': mix(0.05, primary, dark),
 			'200': mix(0.2, primary, dark),
+			'300': mix(0.4, primary, dark),
+			'400': mix(0.7, primary, dark),
 			'600': mix(0.9, primary, light),
 			'700': mix(0.8, primary, light),
 		},

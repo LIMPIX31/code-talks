@@ -6,7 +6,6 @@ import Image from 'next/image'
 import type { FC } from 'react'
 
 const SquareLogoElement = styled(Image)({
-	aspectRatio: '1 / 1',
 	maxHeight: '64px',
 	width: 'auto',
 	borderRadius: 6,

@@ -1,21 +1,21 @@
 {
-	"name": "@widget/header",
+	"name": "@page/profile",
 	"main": "src/index.tsx",
 	"dependencies": {
 		"@entity/viewer": "workspace:^",
-		"@feature/auth-logout": "workspace:^",
+		"@feature/viewer-change-roles": "workspace:^",
 		"@supabase/client": "workspace:^",
-		"@ui/header": "workspace:^"
+		"notistack": "^3.0.1"
 	},
 	"devDependencies": {
-		"@mui/icons-material": "^5.14.1",
 		"@mui/material": "^5.14.2",
+		"@tanstack/react-query": "^5.0.0-beta.2",
 		"@types/react": "^18.2.16",
 		"next": "^13.4.12"
 	},
 	"peerDependencies": {
-		"@mui/icons-material": "5",
 		"@mui/material": "5",
+		"@tanstack/react-query": "*",
 		"next": "13",
 		"react": "18",
 		"react-dom": "18"

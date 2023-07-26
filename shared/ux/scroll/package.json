@@ -1,11 +1,11 @@
 {
-	"name": "@ux/parallax",
+	"name": "@ux/scroll",
 	"main": "src/index.tsx",
+	"dependencies": {
+		"@studio-freight/react-lenis": "^0.0.23"
+	},
 	"devDependencies": {
 		"@types/react": "^18.2.16"
-	},
-	"dependencies": {
-		"framer-motion": "^10.13.1"
 	},
 	"peerDependencies": {
 		"react": "18",

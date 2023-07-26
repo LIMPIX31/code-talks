@@ -2,10 +2,10 @@ import './global.css'
 import type { Metadata } from 'next'
 import ThemeRegistry from './theme-registry'
 import { Header } from '@widget/header'
-import Scroll from './scroll'
 import { inter, mabry, pjs } from './fonts'
 import type { ReactNode } from 'react'
 import Spinner from './spinner'
+import { QueryProvider } from './query'
 
 export const dynamic = 'force-dynamic'
 
@@ -19,9 +19,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html lang='en'>
 			<body className={`${mabry.variable} ${pjs.variable} ${inter.variable}`}>
 				<ThemeRegistry options={{ key: 'mui' }}>
-					<Spinner />
-					<Header />
-					<Scroll>{children}</Scroll>
+					<QueryProvider>
+						<Spinner />
+						<Header />
+						{children}
+					</QueryProvider>
 				</ThemeRegistry>
 			</body>
 		</html>

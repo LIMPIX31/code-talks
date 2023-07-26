@@ -2,14 +2,16 @@
 	"name": "@ui/header",
 	"main": "src/index.tsx",
 	"dependencies": {
-		"@ui/brand": "workspace:^"
+		"@ui/brand": "workspace:^",
+		"next": "^13.4.12"
 	},
 	"devDependencies": {
-		"@mui/material": "5.14.0",
-		"@types/react": "^18.2.15"
+		"@mui/material": "^5.14.2",
+		"@types/react": "^18.2.16"
 	},
 	"peerDependencies": {
 		"@mui/material": "5",
+		"next": "13",
 		"react": "18",
 		"react-dom": "18"
 	}
