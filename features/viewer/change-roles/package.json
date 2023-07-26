@@ -1,11 +1,11 @@
 {
-	"name": "@ui/header",
-	"main": "src/index.tsx",
+	"name": "@feature/viewer-change-roles",
+	"main": "src/index.ts",
 	"dependencies": {
-		"@ui/brand": "workspace:^"
+		"polished": "^4.2.2"
 	},
 	"devDependencies": {
-		"@mui/material": "5.14.2",
+		"@mui/material": "^5.14.2",
 		"@types/react": "^18.2.16"
 	},
 	"peerDependencies": {

@@ -5,8 +5,8 @@
 		"@supabase/discord": "workspace:^"
 	},
 	"devDependencies": {
-		"@mui/material": "5.14.0",
-		"@types/react": "^18.2.15"
+		"@mui/material": "5.14.2",
+		"@types/react": "^18.2.16"
 	},
 	"peerDependencies": {
 		"@mui/material": "5",

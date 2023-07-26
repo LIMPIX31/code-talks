@@ -22,7 +22,7 @@ export const FullwidthCard: FC<FullwidthCardProps> = ({ viewer }) =>
 				<Typography fontWeight='900' fontSize={['3rem', '4rem']}>
 					{viewer.name}
 				</Typography>
-				<Typography fontWeight='900' color='primary.400' fontSize={['1rem', '1.4rem']}>
+				<Typography fontWeight='900' color='primary.300' fontSize={['1rem', '1.4rem']}>
 					@{viewer.uid}
 				</Typography>
 			</Box>
