@@ -48,6 +48,9 @@ export async function PATCH(req: NextRequest) {
 
 	const guildRoles = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/roles`, {
 		method: 'GET',
+		next: {
+			revalidate: 60 * 10,
+		},
 		headers: {
 			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 		},

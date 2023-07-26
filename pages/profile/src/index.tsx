@@ -22,6 +22,10 @@ export async function ProfilePage() {
 		name: session.user.user_metadata['custom_claims']?.['global_name'],
 	}
 
+	const isMember = await fetch(new URL('api/discord/member/is', process.env['NEXT_PUBLIC_URL'])).then((res) =>
+		res.json(),
+	)
+
 	return (
 		<Container
 			maxWidth='lg'
@@ -31,7 +35,7 @@ export async function ProfilePage() {
 			}}
 		>
 			<ViewerFullwidthCard viewer={viewer} />
-			<RolePickerFragment />
+			{isMember && <RolePickerFragment />}
 		</Container>
 	)
 }

@@ -29,6 +29,9 @@ export async function GET(req: NextRequest) {
 
 	const memberResult = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/members/${userId}`, {
 		method: 'GET',
+		next: {
+			revalidate: 60 * 10,
+		},
 		headers: {
 			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 		},
@@ -50,6 +53,9 @@ export async function GET(req: NextRequest) {
 
 	const guildRoles = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/roles`, {
 		method: 'GET',
+		next: {
+			revalidate: 60 * 10,
+		},
 		headers: {
 			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 		},

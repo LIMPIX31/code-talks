@@ -63,11 +63,12 @@ export const RolePickerFragment: FC = () => {
 
 		if (mutation.isError) {
 			enqueueSnackbar(`Failed to assign roles: ${mutation.error?.message}`, {
-				variant: 'success',
+				variant: 'error',
 				autoHideDuration: 2000,
 			})
+			reset()
 		}
-	}, [mutation.isSuccess, mutation.isError, mutation.error?.message])
+	}, [mutation.isSuccess, mutation.isError, mutation.error?.message, reset])
 
 	return (
 		<Box>
