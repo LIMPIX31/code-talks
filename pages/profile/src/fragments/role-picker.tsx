@@ -20,7 +20,7 @@ export const RolePickerFragment: FC = () => {
 	const [selectedRoles, setSelectedRoles] = useState<string[]>([])
 	const [touched, setTouched] = useState(false)
 
-	const { data, error, isLoading } = useQuery<Role[]>({
+	const { data, error, isLoading, refetch } = useQuery<Role[]>({
 		queryKey: ['roles'],
 		queryFn: () => fetch(new URL('api/discord/member/roles', process.env['NEXT_PUBLIC_URL'])).then((res) => res.json()),
 	})
@@ -59,6 +59,7 @@ export const RolePickerFragment: FC = () => {
 	useEffect(() => {
 		if (mutation.isSuccess) {
 			enqueueSnackbar('Roles assigned!', { variant: 'success' })
+			refetch()
 		}
 
 		if (mutation.isError) {
@@ -68,7 +69,7 @@ export const RolePickerFragment: FC = () => {
 			})
 			reset()
 		}
-	}, [mutation.isSuccess, mutation.isError, mutation.error?.message, reset])
+	}, [mutation.isSuccess, mutation.isError, mutation.error?.message, reset, refetch])
 
 	return (
 		<Box>
