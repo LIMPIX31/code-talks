@@ -2,7 +2,7 @@
 	"name": "@ui/brand",
 	"main": "src/index.tsx",
 	"devDependencies": {
-		"@mui/material": "5.14.2",
+		"@mui/material": "^5.14.2",
 		"@types/react": "^18.2.16",
 		"next": "^13.4.12"
 	},
