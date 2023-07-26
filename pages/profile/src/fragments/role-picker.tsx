@@ -19,6 +19,7 @@ interface Role {
 export const RolePickerFragment: FC = () => {
 	const [selectedRoles, setSelectedRoles] = useState<string[]>([])
 	const [touched, setTouched] = useState(false)
+	const [submitted, setSubmitted] = useState(false)
 
 	const { data, error, isLoading, refetch } = useQuery<Role[]>({
 		queryKey: ['roles'],
@@ -40,6 +41,10 @@ export const RolePickerFragment: FC = () => {
 		}
 	}, [data])
 
+	useEffect(() => {
+		reset()
+	}, [data, reset])
+
 	const change = useCallback((roles: string[]) => {
 		setTouched(true)
 		setSelectedRoles(roles)
@@ -47,6 +52,7 @@ export const RolePickerFragment: FC = () => {
 
 	const submit = useCallback(() => {
 		setTouched(false)
+		setSubmitted(false)
 		mutation.mutate(selectedRoles)
 	}, [mutation, selectedRoles])
 
@@ -57,8 +63,13 @@ export const RolePickerFragment: FC = () => {
 	}, [data, isLoading, reset])
 
 	useEffect(() => {
+		if (submitted) {
+			return
+		}
+
 		if (mutation.isSuccess) {
 			enqueueSnackbar('Roles assigned!', { variant: 'success' })
+			setSubmitted(true)
 			refetch()
 		}
 
@@ -67,9 +78,8 @@ export const RolePickerFragment: FC = () => {
 				variant: 'error',
 				autoHideDuration: 2000,
 			})
-			reset()
 		}
-	}, [mutation.isSuccess, mutation.isError, mutation.error?.message, reset, refetch])
+	}, [mutation.isSuccess, mutation.isError, mutation.error?.message, refetch, reset, submitted])
 
 	return (
 		<Box>
