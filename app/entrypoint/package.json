@@ -13,11 +13,11 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.1",
-    "@mui/material": "5.14.0",
+    "@mui/material": "5.14.2",
     "@next/bundle-analyzer": "^13.4.12",
     "@types/node": "^20.4.4",
-    "@types/react": "^18.2.15",
-    "tslib": "^2.6.0"
+    "@types/react": "^18.2.16",
+    "tslib": "^2.6.1"
   },
   "dependencies": {
     "@page/home": "workspace:^",
@@ -27,6 +27,7 @@
     "@supabase/auth-helpers-nextjs": "^0.7.3",
     "@supabase/client": "workspace:^",
     "@supabase/supabase-js": "^2.29.0",
+    "@tanstack/react-query": "^5.0.0-beta.2",
     "@theme/schema": "workspace:^",
     "@ux/scroll": "workspace:^",
     "@widget/header": "workspace:^",

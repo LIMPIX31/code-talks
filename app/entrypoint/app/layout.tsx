@@ -5,6 +5,7 @@ import { Header } from '@widget/header'
 import { inter, mabry, pjs } from './fonts'
 import type { ReactNode } from 'react'
 import Spinner from './spinner'
+import { QueryProvider } from './query'
 
 export const dynamic = 'force-dynamic'
 
@@ -18,9 +19,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 		<html lang='en'>
 			<body className={`${mabry.variable} ${pjs.variable} ${inter.variable}`}>
 				<ThemeRegistry options={{ key: 'mui' }}>
-					<Spinner />
-					<Header />
-					{children}
+					<QueryProvider>
+						<Spinner />
+						<Header />
+						{children}
+					</QueryProvider>
 				</ThemeRegistry>
 			</body>
 		</html>

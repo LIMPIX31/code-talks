@@ -60,6 +60,12 @@ export async function GET(req: NextRequest) {
 	return NextResponse.json(
 		guildRoles
 			.filter(({ id }) => Boolean(roleWhitelist[id]))
-			.map(({ id, name, color }) => ({ id, name, color: numberToHex(color), assigned: memberRoleIds.includes(id) })),
+			.map(({ id, name, color }) => ({
+				id,
+				name,
+				color: numberToHex(color),
+				assigned: memberRoleIds.includes(id),
+				group: roleWhitelist[id].group_name,
+			})),
 	)
 }
