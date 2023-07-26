@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography'
 import { RoleChip } from './role-chip'
 import Grid from '@mui/material/Unstable_Grid2'
 import { Divider } from '@mui/material'
-import { load } from '../../../../../.pnp.loader.mjs'
 import CircularProgress from '@mui/material/CircularProgress'
 
 export interface RolePickerRole {

@@ -1,9 +1,13 @@
-import { ViewerFullwidthCard } from '@entity/viewer'
 import { cookies } from 'next/headers'
 import { useServerClient } from '@supabase/client'
-import Container from '@mui/material/Container'
 import { redirect } from 'next/navigation'
-import { RolePickerFragment } from './fragments/role-picker'
+import dynamic from 'next/dynamic'
+
+const Container = dynamic(() => import('@mui/material/Container'))
+const ViewerFullwidthCard = dynamic(() =>
+	import('@entity/viewer').then(({ ViewerFullwidthCard }) => ViewerFullwidthCard),
+)
+const RolePickerFragment = dynamic(() => import('./fragments/role-picker'))
 
 export async function ProfilePage() {
 	const supabase = useServerClient({ cookies })

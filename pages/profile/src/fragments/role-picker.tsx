@@ -94,3 +94,5 @@ export const RolePickerFragment: FC = () => {
 		</Box>
 	)
 }
+
+export default RolePickerFragment

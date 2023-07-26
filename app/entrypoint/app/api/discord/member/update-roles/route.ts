@@ -19,7 +19,7 @@ export async function PATCH(req: NextRequest) {
 
 	const { session } = data
 
-	const userId = session.user?.user_metadata?.provider_id
+	const userId = session.user?.user_metadata?.['provider_id']
 
 	if (!userId) {
 		return new Response(null, { status: 401 })
@@ -46,19 +46,22 @@ export async function PATCH(req: NextRequest) {
 
 	const roleWhitelist = Object.fromEntries(roles.map(({ role_id, ...rest }) => [role_id, rest]))
 
-	const guildRoles = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/roles`, {
-		method: 'GET',
-		next: {
-			revalidate: 60 * 10,
+	const guildRoles: Array<{ id: string; name: string; color: number }> = await fetch(
+		`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/roles`,
+		{
+			method: 'GET',
+			next: {
+				revalidate: 60 * 10,
+			},
+			headers: {
+				Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
+			},
 		},
-		headers: {
-			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
-		},
-	}).then((res) => res.json())
+	).then((res) => res.json())
 
 	const guildRoleIds = guildRoles.map(({ id }) => id)
 
-	const memberRoleIds = member.roles
+	const memberRoleIds: string[] = member.roles
 
 	const rolesToUpdate = selectedRoles.filter((id) => roleWhitelist[id] && guildRoleIds.includes(id))
 

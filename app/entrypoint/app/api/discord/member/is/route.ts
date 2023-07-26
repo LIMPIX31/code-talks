@@ -13,7 +13,7 @@ export async function GET() {
 
 	const { session } = data
 
-	const userId = session.user?.user_metadata?.provider_id
+	const userId = session.user?.user_metadata?.['provider_id']
 
 	if (!userId) {
 		return new Response(JSON.stringify({ isMember: false }), { status: 401 })
