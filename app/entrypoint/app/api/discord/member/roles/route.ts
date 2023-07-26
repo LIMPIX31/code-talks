@@ -3,6 +3,8 @@ import { useServerClient as createServerClient } from '@supabase/client'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 function numberToHex(n: number) {
 	const r = (n & 0xff0000) >> 16
 	const g = (n & 0x00ff00) >> 8
@@ -29,9 +31,6 @@ export async function GET(req: NextRequest) {
 
 	const memberResult = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/members/${userId}`, {
 		method: 'GET',
-		next: {
-			revalidate: 60 * 10,
-		},
 		headers: {
 			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 		},
@@ -55,9 +54,6 @@ export async function GET(req: NextRequest) {
 		`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/roles`,
 		{
 			method: 'GET',
-			next: {
-				revalidate: 60 * 10,
-			},
 			headers: {
 				Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 			},

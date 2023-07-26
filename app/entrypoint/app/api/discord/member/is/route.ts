@@ -2,6 +2,8 @@ import { useServerClient as createServerClient } from '@supabase/client'
 import { cookies } from 'next/headers'
 import { NextResponse } from 'next/server'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET() {
 	const supabase = createServerClient({ cookies })
 
@@ -21,9 +23,6 @@ export async function GET() {
 
 	const { status } = await fetch(`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/members/${userId}`, {
 		method: 'GET',
-		next: {
-			revalidate: 60 * 10,
-		},
 		headers: {
 			Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 		},
