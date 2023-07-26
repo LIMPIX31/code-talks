@@ -1525,8 +1525,10 @@ __metadata:
     "@mui/material": "npm:5.14.2"
     "@types/react": "npm:^18.2.16"
     "@ui/brand": "workspace:^"
+    next: "npm:^13.4.12"
   peerDependencies:
     "@mui/material": 5
+    next: 13
     react: 18
     react-dom: 18
   languageName: unknown
@@ -1562,12 +1564,14 @@ __metadata:
   dependencies:
     "@entity/viewer": "workspace:^"
     "@feature/auth-logout": "workspace:^"
+    "@mui/icons-material": "npm:^5.14.1"
     "@mui/material": "npm:5.14.2"
     "@supabase/client": "workspace:^"
     "@types/react": "npm:^18.2.16"
     "@ui/header": "workspace:^"
     next: "npm:^13.4.12"
   peerDependencies:
+    "@mui/icons-material": 5
     "@mui/material": 5
     next: 13
     react: 18

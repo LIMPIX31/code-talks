@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import { SquareLogo } from '@ui/brand'
+import Link from 'next/link'
 
 export interface HeaderProps {
 	features?: ReactNode[]
@@ -27,7 +28,9 @@ export const Header: FC<HeaderProps> = ({ features }) => (
 	>
 		<Container maxWidth='xl' sx={{ height: '100%' }}>
 			<Box display='flex' flexDirection='row' alignItems='center' height='100%' justifyContent='space-between'>
-				<SquareLogo />
+				<Link href='/'>
+					<SquareLogo />
+				</Link>
 				<Box display='flex' flexDirection='row' gap={2}>
 					{features}
 				</Box>
