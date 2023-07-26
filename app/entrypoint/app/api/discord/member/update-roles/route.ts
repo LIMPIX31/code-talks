@@ -2,6 +2,8 @@ import type { NextRequest } from 'next/server'
 import { useServerClient as createServerClient } from '@supabase/client'
 import { cookies } from 'next/headers'
 
+export const dynamic = 'force-dynamic'
+
 export async function PATCH(req: NextRequest) {
 	const { roles: selectedRoles } = await req.json()
 
@@ -50,9 +52,6 @@ export async function PATCH(req: NextRequest) {
 		`https://discord.com/api/v10/guilds/${process.env['GUILD_ID']}/roles`,
 		{
 			method: 'GET',
-			next: {
-				revalidate: 60 * 10,
-			},
 			headers: {
 				Authorization: `Bot ${process.env['DISCORD_BOT_TOKEN']}`,
 			},
