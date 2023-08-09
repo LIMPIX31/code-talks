@@ -21,8 +21,8 @@ export async function HomePage() {
 
 	return (
 		<Box>
-			<TitleFragment count={count} online={online} />
-			<JoinFragment auth={auth} />
+			<TitleFragment count={count} online={online} auth={auth} />
+			<JoinFragment />
 			<FooterFragment />
 		</Box>
 	)

@@ -55,7 +55,7 @@ const TermsDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onClos
 			</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-			<Button autoFocus onClick={onAgree}>
+			<Button onClick={onAgree}>
 				Make sense
 			</Button>
 			<Button variant='contained' onClick={onCancel}>
@@ -74,7 +74,7 @@ const DisagreeDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onC
 			</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-			<Button autoFocus onClick={onAgree}>
+			<Button onClick={onAgree}>
 				Please :3
 			</Button>
 			<Button variant='contained' onClick={onCancel}>
