@@ -68,6 +68,9 @@ export const darkPalette = {
 		},
 		magenta: {
 			main: '#390cff',
+			'100': mix(0.1, '#390cff', dark),
+			'600': mix(0.9, '#390cff', light),
+			'700': mix(0.8, '#390cff', light),
 		},
 		pink: {
 			main: '#ff0cce',

@@ -28,7 +28,7 @@ const TermsDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onClos
 		<DialogContent>
 			<DialogContentText>
 				<Typography fontWeight='900' fontSize='1.5rem'>
-					1. Your Discord account
+					1. Come on. Why you are reading it?
 				</Typography>
 				<Typography>We are going to authorize you via Discord so you can join us.</Typography>
 				<ul>
@@ -40,23 +40,13 @@ const TermsDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onClos
 						server and to gather analytics about your activity on the server
 					</li>
 					<li>
+						Why do you <b>KEEP</b> reading this?
+					</li>
+					<li>
 						We <b>ONLY</b> store your public Discord data.
 					</li>
 					<li>
 						We <b>DO NOT</b> read or store your private messages or other confidential Discord information.
-					</li>
-				</ul>
-				<Typography fontWeight='900' fontSize='1.5rem'>
-					2. Discord server
-				</Typography>
-				<ul>
-					<li>
-						First of all, you join an IT-themed server. If you want to discuss other topics, make sure there is an
-						appropriate channel for that.
-					</li>
-					<li>
-						The single language of communication on the server is English. You must have at least an intermediate level
-						of English to be able to respond quickly.
 					</li>
 				</ul>
 				<Typography fontSize='1.1rem' fontWeight='900'>
@@ -65,11 +55,9 @@ const TermsDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onClos
 			</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-			<Button autoFocus onClick={onAgree}>
-				Am i sure?
-			</Button>
+			<Button onClick={onAgree}>Make sense</Button>
 			<Button variant='contained' onClick={onCancel}>
-				Disagree
+				I am a barbie boy
 			</Button>
 		</DialogActions>
 	</Dialog>
@@ -80,15 +68,13 @@ const DisagreeDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onC
 		<DialogTitle>You missed, didn&apos;t you?</DialogTitle>
 		<DialogContent>
 			<DialogContentText>
-				<Typography>Anyway, come back when you think of it.</Typography>
+				<Typography>We need you</Typography>
 			</DialogContentText>
 		</DialogContent>
 		<DialogActions>
-			<Button autoFocus onClick={onAgree}>
-				Try again
-			</Button>
+			<Button onClick={onAgree}>Please :3</Button>
 			<Button variant='contained' onClick={onCancel}>
-				I see
+				Im ashamed
 			</Button>
 		</DialogActions>
 	</Dialog>
