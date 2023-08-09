@@ -40,7 +40,8 @@ const Scrolly = <C extends keyof typeof motion>({
 					? document.body
 					: document.querySelector(`[data-parallax-id="${bindTo}"]`)
 				: undefined,
-		[bindTo],
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[bindTo, update],
 	)
 
 	const { scrollY } = useScroll()
