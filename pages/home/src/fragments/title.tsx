@@ -12,6 +12,33 @@ const makeScrolly = (d: Parameters<typeof scrolly>[0]) => scrolly(d, { bindTo: '
 const D3Logo = dynamic(() => import('@ui/brand').then(({ D3Logo }) => D3Logo))
 const Sparkle = dynamic(() => import('@ui/brand').then(({ Sparkle }) => Sparkle))
 
+const Counter: FC<{ title: string; count: string | number }> = ({ count, title }) => (
+	<Box
+		component={makeScrolly({ y: [0, 0, -500], rotate: [0, 5, 35] })}
+		sx={({ palette }) => ({
+			display: 'flex',
+			backdropFilter: 'blur(25px) !important',
+			flexDirection: 'column',
+			alignItems: 'center',
+			borderRadius: 3,
+			borderStyle: 'solid',
+			borderWidth: '1px',
+			borderColor: `color-mix(in srgb, ${palette.text.primary}, transparent 95%)`,
+			backgroundColor: `color-mix(in srgb, ${palette.background.default}, transparent 50%)`,
+			boxShadow: `0 0 10px 0 color-mix(in srgb, ${palette.background.default}, transparent 80%)`,
+			padding: '25px',
+			gap: ['40px', '30px'],
+		})}
+	>
+		<Box fontWeight={900} fontSize='18px' lineHeight='0.1vmax' textAlign='center'>
+			{title}
+		</Box>
+		<Box fontWeight={900} fontSize='60px' lineHeight='23px' color='magenta.700'>
+			{count}
+		</Box>
+	</Box>
+)
+
 const sparkles = [
 	<Sparkle
 		position='absolute'
@@ -38,7 +65,7 @@ const sparkles = [
 	/>,
 ]
 
-export const TitleFragment: FC = () => (
+export const TitleFragment: FC<{ online: number; count: number }> = ({ online, count }) => (
 	<Box overflow='hidden' position='relative'>
 		{sparkles}
 		<Container
@@ -81,33 +108,36 @@ export const TitleFragment: FC = () => (
 							component={makeScrolly({
 								x: [0, 0, -500],
 								y: [0, 0, -400],
-								rotate: [0, 0, -20],
 							})}
 							sx={{
-								fontSize: '3vmax',
+								fontSize: '1.6vmax',
 								position: 'absolute',
-								right: '25vmax',
-								top: '22vmax',
+								left: '50%',
+								top: ['50vmax', '30vmax'],
 								backgroundColor: 'primary.main',
 								color: 'background.default',
 								padding: '0 40px',
-								lineHeight: '8vmax',
+								lineHeight: '3vmax',
 								fontWeight: 900,
 								fontFamily: 'var(--font-pjs)',
-								rotate: '-18deg',
-								mixBlendMode: 'difference',
+								rotate: '-2deg',
 								zIndex: 10,
-								width: '46vmax',
+								width: '120vmax',
+								translate: '-50% 0',
 								textAlign: 'center',
 							}}
 						>
-							I don&apos;t know what to write
+							If you wanna make friends and waste your time then can join us!!
 						</Box>
-						<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: [0, 0, -200] })}>
-							To code
+						<Box fontWeight={900} fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: [0, 0, -200] })}>
+							CoTalks
 						</Box>
-						<Box fontSize='inherit' lineHeight='inherit' component={makeScrolly({ y: [0, 0, -100], x: [0, 0, -500] })}>
-							To talk
+						<Box fontWeight={900} fontSize='5vmax' lineHeight='4vmax' component={makeScrolly({ y: [0, 0, -200] })}>
+							Waste your time
+						</Box>
+						<Box position='relative' zIndex={10} marginTop={[5, 5]} display='flex' gap='1vmax' flexWrap='wrap'>
+							<Counter title='Members' count={count} />
+							<Counter title='Online' count={online} />
 						</Box>
 					</Typography>
 					<Box component={makeScrolly({ y: [0, 0, 100], x: [0, 0, 50] })} position='relative' flexShrink='0'>

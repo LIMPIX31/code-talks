@@ -90,7 +90,7 @@ const TextSubfrag: FC = () => (
 					filter: 'brightness(150%) saturate(150%)',
 				})}
 			>
-				creating
+				wasting time
 			</Box>
 		</Box>
 		<Box component={makeScrolly({ y: [500, 0, -10] }, 0.5)}>
@@ -180,7 +180,7 @@ export const JoinFragment: FC<{ auth: boolean }> = ({ auth }) => {
 	const [, submit] = contract
 
 	return (
-		<Box data-parallax-id='join' position='relative' minHeight='100vh'>
+		<Box data-parallax-id='join' position='relative' minHeight='100vh' overflow='hidden'>
 			<JoinContract state={contract} />
 			<StoneSubfrag />
 			<Container maxWidth='xl' sx={{ py: 16 }}>

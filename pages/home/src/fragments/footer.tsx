@@ -32,9 +32,9 @@ export const FooterFragment: FC = () => (
 				width='100%'
 				height='100%'
 				sx={{
-					backgroundColor: 'secondary.main',
-					filter: 'blur(300px)',
-					opacity: 0.5,
+					backgroundColor: 'magenta.main',
+					filter: 'blur(500px)',
+					opacity: 0.35,
 					borderRadius: '20%',
 				}}
 			/>

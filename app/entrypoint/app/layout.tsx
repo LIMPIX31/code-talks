@@ -10,8 +10,8 @@ import { QueryProvider } from './query'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-	title: 'CodeTalks',
-	description: 'To code to talk',
+	title: 'CoTalks',
+	description: 'Wasting your time',
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
