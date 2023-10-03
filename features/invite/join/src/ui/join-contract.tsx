@@ -57,7 +57,7 @@ const TermsDialog: FC<DialogController> = ({ isOpened, onAgree, onCancel, onClos
 		<DialogActions>
 			<Button onClick={onAgree}>Make sense</Button>
 			<Button variant='contained' onClick={onCancel}>
-				Let&apos;s go!
+				No, thanks!
 			</Button>
 		</DialogActions>
 	</Dialog>
